@@ -24,6 +24,19 @@ module.exports = {
           }
         ]
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/', // Output directory for the SVG files
+              publicPath: 'images/' // Public URL path for the SVG files
+            }
+          }
+        ]
+      },
       { test: /.ts$/i, use: 'ts-loader' },
       {
         test: /.(scss|css)$/,

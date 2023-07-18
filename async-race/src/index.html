@@ -4,13 +4,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RSS-CSS-SELECTORS</title>
+  <title>async-race</title>
 </head>
 
 <body id="body">
   <div class="wrap">
-
-  </div>
+    <div class="container-mode">
+      <button class="container-mode__btn" id="toBeatleBtn">TO BEATLES</button>
+      <button class="container-mode__btn" id="toWinnerBtn">TO WINNERS</button>
+      </div>
+    <div class="container-preparate">
+      <div class="wrap-create">
+        <input id="createName" type="text">
+        <input id="createColor" type="color">
+        <button class="container-preparate__btn" id="createBtn">Create</button>
+      </div>
+      <div class="wrap-update">
+        <input id="updateName" type="text">
+        <input id="updateColor" type="color">
+        <button class="container-preparate__btn" id="updateBtn">Update</button>
+      </div>
+    </div>
+    <div class="container-third">
+      <button class="container-third__btn" id="RACE">RACE</button>
+      <button class="container-third__btn" id="RESET">RESET</button>
+      <button class="container-third__btn" id="HATCH">HATCH BEATLES</button>
+    </div>
+    <div class="wrap-tracks">
+      <div class="container-title">
+        <h2 class="container-title__title" id="title">GARAGE (1)</h2>
+        <h3 class="container-title__page" id="page">Page #1</h3>
+      </div>
+      <div class="field-race">
+        <div class="container-track">
+          <div class="line-mode-1">
+            <button class="line-mode-1__btn" id="SELECT">SELECT</button>
+            <button class="line-mode-1__btn" id="REMOVE">REMOVE</button>
+            <div class="line-mode-1__name" id="name">bug_1</div>
+          </div>
+          <div class="line-mode-2">
+            <div class="line-mode-2__status">A</div>
+            <div class="line-mode-2__status">B</div>
+            <div class="wrap-image-bug"></div>
+            <div class="wrap-image-comp"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
 </body>
 
 </html>
