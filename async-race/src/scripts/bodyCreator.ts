@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+export const body = document.getElementById('body') as HTMLBodyElement;
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>async-race</title>
-</head>
+export const mainContainer = document.createElement('div') as HTMLDivElement;
+body.appendChild(mainContainer)
 
-<body id="body">
-  <!-- <div class="wrap">
+ mainContainer.innerHTML = `
+ <div class="wrap">
     <div class="container-mode">
       <button class="container-mode__btn" id="toBeatleBtn">TO BEATLES</button>
       <button class="container-mode__btn" id="toWinnerBtn">TO WINNERS</button>
@@ -53,7 +49,4 @@
         </div>
       </div>
     </div>
-    </div> -->
-</body>
-
-</html>
+    </div>`;
