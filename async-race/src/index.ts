@@ -5,7 +5,8 @@ import './sass/racePage.scss'
 import './scripts/common'
 import './scripts/bodyCreator'
 import './scripts/serverRequest'
-import './scripts/updateBtn'
-import './scripts/createBtn'
+import './scripts/updateTrack'
+import './scripts/createTrack'
+import './scripts/randomize'
 
 

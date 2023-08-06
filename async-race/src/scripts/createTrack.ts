@@ -1,20 +1,45 @@
 const createBtn = document.getElementById('createBtn') as HTMLButtonElement;
-// const createColor = document.getElementById('updateColor') as HTMLInputElement;
-// const createName = document.getElementById('updateName') as HTMLInputElement;
+const createColor = document.getElementById('createName') as HTMLInputElement;
+const createName = document.getElementById('createColor') as HTMLInputElement;
 const fieldRace = document.querySelector('.field-race') as HTMLDivElement;
 
 //import {svgBug} from './common'
 
+let nameId = 'UFO-', counterName = 1, nameUFO = '';
+
+function nameIndexing() {
+nameId = 'UFO-' + counterName;
+counterName++
+console.log(createName.value, ' - createName.value')
+console.log(createColor.value, ' - createColor.value')
+}
+
+function checkName() {
+  if(createName.value === '#000000') {
+    nameUFO = 'unmamed';
+  } else if(createName.value !== '#000000') {
+    nameUFO = createName.value;
+  }
+}
+
+// function randomColor() {
+//   let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+//   console.log(randomColor.length, ' - lenght');
+//   while (randomColor.length < 6) {
+//     randomColor = "0" + randomColor;
+//   }
+//   return "#" + randomColor;
+// }
 
 function trackCreator(): HTMLDivElement {
 
 const contaierTrack = document.createElement('div') as HTMLDivElement;
 
-contaierTrack.innerHTML =  `<div class="container-track">
+contaierTrack.innerHTML = `<div class="container-track">
 <div class="line-mode-1">
 <button class="line-mode-1__btn" id="SELECT">SELECT</button>
 <button class="line-mode-1__btn" id="REMOVE">REMOVE</button>
-  <div class="line-mode-1__name" id="name">bug_1</div>
+  <div class="line-mode-1__name" id="${nameId}">${nameUFO}</div>
 </div>
 <div class="line-mode-2">
   <div class="wrap-status mode-status">
@@ -30,9 +55,23 @@ contaierTrack.innerHTML =  `<div class="container-track">
 }
 
 createBtn.addEventListener('click', () => {
-  console.log('check')
-  // console.log(createColor.value)
-  // console.log(createName.value)
-  // svgBug.setAttribute('fill', `${createColor.value}`);
+  nameIndexing()
+  checkName()
   fieldRace.append(trackCreator())
 })
+
+
+// import {body} from './bodyCreator'
+
+// window.addEventListener('beforeunload', function() {
+//   const bodyUpdating = document.getElementById('body') as HTMLBodyElement;
+//   localStorage.setItem('condition', bodyUpdating.innerHTML)
+// });
+
+
+// window.addEventListener('load', function() {
+//   const condition = localStorage.getItem('condition');
+//   if (condition !== null) {
+//     body.innerHTML = condition;
+//   }
+// });

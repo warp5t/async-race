@@ -1,12 +1,12 @@
 export const body = document.getElementById('body') as HTMLBodyElement;
 
-export const mainContainer = document.createElement('div') as HTMLDivElement;
-body.appendChild(mainContainer)
+// export const mainContainer = document.createElement('div') as HTMLDivElement;
+// body.appendChild(mainContainer)
 
- mainContainer.innerHTML = `
+body.innerHTML = `
  <div class="wrap">
     <div class="container-mode">
-      <button class="container-mode__btn" id="toBeatleBtn">TO BEATLES</button>
+      <button class="container-mode__btn" id="toBeatleBtn">TO UFO</button>
       <button class="container-mode__btn" id="toWinnerBtn">TO WINNERS</button>
       </div>
     <div class="container-preparate">
@@ -24,7 +24,7 @@ body.appendChild(mainContainer)
     <div class="container-third">
       <button class="container-third__btn" id="RACE">RACE</button>
       <button class="container-third__btn" id="RESET">RESET</button>
-      <button class="container-third__btn" id="HATCH">HATCH BEATLES</button>
+      <button class="container-third__btn" id="HATCH">HATCH UFO</button>
     </div>
     <div class="wrap-tracks">
       <div class="container-title">
@@ -36,7 +36,7 @@ body.appendChild(mainContainer)
           <div class="line-mode-1">
             <button class="line-mode-1__btn" id="SELECT">SELECT</button>
             <button class="line-mode-1__btn" id="REMOVE">REMOVE</button>
-            <div class="line-mode-1__name" id="name">bug_1</div>
+            <div class="line-mode-1__name" id="UFO-0">UFO-0</div>
           </div>
           <div class="line-mode-2">
             <div class="wrap-status mode-status">
