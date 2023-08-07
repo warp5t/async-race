@@ -1,5 +1,5 @@
 export const body = document.getElementById('body') as HTMLBodyElement;
-
+import space from '../images/space.jpg'
 // export const mainContainer = document.createElement('div') as HTMLDivElement;
 // body.appendChild(mainContainer)
 
@@ -50,3 +50,6 @@ body.innerHTML = `
       </div>
     </div>
     </div>`;
+
+    const wrap = document.querySelector('.wrap') as HTMLDivElement;
+    wrap.style.backgroundImage = `url(${space})`;
