@@ -1,12 +1,18 @@
 const createBtn = document.getElementById('createBtn') as HTMLButtonElement;
 //const createColor = document.getElementById('createName') as HTMLInputElement;
 const createName = document.getElementById('createColor') as HTMLInputElement;
-const fieldRace = document.querySelector('.field-race') as HTMLDivElement;
+export const fieldRace = document.querySelector('.field-race') as HTMLDivElement;
 const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
 
-//import {unitID} from './common'
+import {fixHeight} from './fixHeight'
 
 let nameId = 'UFO-', counterID = 1, nameUFO = '', svg_ID = 'svg-0';
+export let countUFO = 1;
+
+function updateCountUFO(){
+  const GARAGE = document.getElementById('title') as HTMLHeadElement;
+  GARAGE.innerText = `GARAGE (${countUFO})`
+}
 
 function set_ID() {
 nameId = 'UFO-' + counterID;
@@ -58,24 +64,27 @@ contaierTrack.innerHTML = `<div class="container-track">
 }
 
 createBtn.addEventListener('click', () => {
+  countUFO++
+  updateCountUFO()
   set_ID()
   checkName()
   fieldRace.append(trackCreator())
+  fixHeight()
 })
 
 import {randomName} from './randomize'
 import {spliceName} from './randomize'
 
 hatchBtn.addEventListener('click', () => {
-  console.log('hatchBtn')
+  countUFO++
+  updateCountUFO()
   randomName();
   nameUFO = spliceName[spliceName.length -1];
   set_ID()
   fieldRace.append(trackCreator())
   const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
-  // const colorRand = randomColor();
-  // console.log(colorRand)
   svgID_name.setAttribute('fill', randomColor());
+  fixHeight()
 })
 // import {body} from './bodyCreator'
 

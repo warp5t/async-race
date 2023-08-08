@@ -8,5 +8,6 @@ import './scripts/serverRequest'
 import './scripts/updateTrack'
 import './scripts/createTrack'
 import './scripts/randomize'
+import './scripts/fixHeight'
 
 

@@ -49,7 +49,12 @@ body.innerHTML = `
         </div>
       </div>
     </div>
+    <div class="page-btn">
+      <button class="page-btn__next">NEXT</button>
+      <button class="page-btn__previous">PREVIOUS</button>
+    </div>
+    </div>
     </div>`;
 
-    const wrap = document.querySelector('.wrap') as HTMLDivElement;
-    wrap.style.backgroundImage = `url(${space})`;
+    // const wrap = document.querySelector('.wrap') as HTMLDivElement;
+    body.style.backgroundImage = `url(${space})`;
