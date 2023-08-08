@@ -28,7 +28,13 @@
 .container-title__page {
 }
 .field-race {
+  position: relative;
   overflow: hidden;
+}
+.subwrap-field-race {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }
 .container-track {
 }

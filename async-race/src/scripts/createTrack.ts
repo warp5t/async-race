@@ -1,7 +1,7 @@
 const createBtn = document.getElementById('createBtn') as HTMLButtonElement;
 //const createColor = document.getElementById('createName') as HTMLInputElement;
 const createName = document.getElementById('createColor') as HTMLInputElement;
-export const fieldRace = document.querySelector('.field-race') as HTMLDivElement;
+export const subwrapFieldRace = document.querySelector('.subwrap-field-race') as HTMLDivElement;
 const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
 
 import {fixHeight} from './fixHeight'
@@ -68,7 +68,7 @@ createBtn.addEventListener('click', () => {
   updateCountUFO()
   set_ID()
   checkName()
-  fieldRace.append(trackCreator())
+  subwrapFieldRace.append(trackCreator())
   fixHeight()
 })
 
@@ -78,14 +78,17 @@ import {spliceName} from './randomize'
 hatchBtn.addEventListener('click', () => {
   countUFO++
   updateCountUFO()
-  randomName();
+  randomName()
   nameUFO = spliceName[spliceName.length -1];
   set_ID()
-  fieldRace.append(trackCreator())
+  subwrapFieldRace.append(trackCreator())
   const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
   svgID_name.setAttribute('fill', randomColor());
   fixHeight()
 })
+
+
+
 // import {body} from './bodyCreator'
 
 // window.addEventListener('beforeunload', function() {

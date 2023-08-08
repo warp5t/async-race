@@ -9,5 +9,6 @@ import './scripts/updateTrack'
 import './scripts/createTrack'
 import './scripts/randomize'
 import './scripts/fixHeight'
+import './scripts/switchPages'
 
 
