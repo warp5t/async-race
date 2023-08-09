@@ -3,6 +3,7 @@ const createBtn = document.getElementById('createBtn') as HTMLButtonElement;
 const createName = document.getElementById('createColor') as HTMLInputElement;
 export const subwrapFieldRace = document.querySelector('.subwrap-field-race') as HTMLDivElement;
 const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
+export let ammountPages: number;
 
 import {fixHeight} from './fixHeight'
 
@@ -65,6 +66,7 @@ contaierTrack.innerHTML = `<div class="container-track">
 
 createBtn.addEventListener('click', () => {
   countUFO++
+  ammountPages = Math.trunc(countUFO / 7);
   updateCountUFO()
   set_ID()
   checkName()
@@ -77,6 +79,7 @@ import {spliceName} from './randomize'
 
 hatchBtn.addEventListener('click', () => {
   countUFO++
+  ammountPages = Math.trunc(countUFO / 7);
   updateCountUFO()
   randomName()
   nameUFO = spliceName[spliceName.length -1];

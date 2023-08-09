@@ -1,25 +1,31 @@
-import {subwrapFieldRace} from './createTrack'
-import {maxHeightField} from './fixHeight'
-import {countUFO} from './createTrack'
+import {
+  maxHeightField
+} from './fixHeight'
+import {
+  // countUFO,
+  ammountPages,
+  subwrapFieldRace
+} from './createTrack'
+
 const nextBtn = document.querySelector('.page-btn__next') as HTMLButtonElement;
 const prevBtn = document.querySelector('.page-btn__previous') as HTMLButtonElement;
-let countPage = 0;
+let countPages = 0, numberPage = 1;
+// let remainPages: number;
+//export let lastPage = false;
+
 
 function updateCountPages() {
   const page = document.getElementById('page') as HTMLHeadElement;
-  page.innerText = `page #${countPage + 1}`;
+  page.innerText = `page #${numberPage}`;
 }
 
 function enumPermiss() {
-  const remain = Math.trunc(countUFO / 8);
-  console.log(remain, ' - remain')
-  console.log(countPage, ' - countPage')
-  if(countPage === remain) {
+  if (ammountPages === countPages) {
     nextBtn.disabled = true;
   } else {
     nextBtn.disabled = false;
   }
-  if(countPage === 0) {
+  if(countPages === 0) {
     prevBtn.disabled = true;
   } else {
     prevBtn.disabled = false;
@@ -29,21 +35,27 @@ function enumPermiss() {
 window.addEventListener('DOMContentLoaded', enumPermiss)
 
 nextBtn.addEventListener('click', () => {
+  countPages++
+  numberPage++
   enumPermiss()
-    countPage++
-    subwrapFieldRace.style.bottom = ((-1) * maxHeightField * countPage) + 'px';
-    updateCountPages()
+  subwrapFieldRace.style.bottom = ((-1) * maxHeightField * countPages) + 'px';
+  updateCountPages()
 })
 
 prevBtn.addEventListener('click', () => {
+  countPages--
+  numberPage--
   enumPermiss()
-  countPage--
-  subwrapFieldRace.style.bottom = ((-1) * maxHeightField * countPage) + 'px';
+  subwrapFieldRace.style.bottom = ((-1) * maxHeightField * countPages) + 'px';
   updateCountPages()
 })
 
 const observer = new MutationObserver(enumPermiss);
 
-const config = { attributes: true, childList: true, subtree: true };
+const config = {
+  attributes: true,
+  childList: true,
+  subtree: true
+};
 
-observer.observe(subwrapFieldRace,config)
+observer.observe(subwrapFieldRace, config)

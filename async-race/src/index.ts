@@ -6,9 +6,9 @@ import './scripts/common'
 import './scripts/bodyCreator'
 import './scripts/serverRequest'
 import './scripts/updateTrack'
+import './scripts/switchPages'
 import './scripts/createTrack'
 import './scripts/randomize'
 import './scripts/fixHeight'
-import './scripts/switchPages'
 
 
