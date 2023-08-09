@@ -1,5 +1,6 @@
 import {
-  maxHeightField
+  maxHeightField,
+  fixHeight
 } from './fixHeight'
 import {
   ammountPages,
@@ -17,9 +18,8 @@ function updateCountPages() {
   page.innerText = `page #${numberPage}`;
 }
 
-function enumPermiss() {
-  console.log('ammountPages - ', ammountPages, 'countPages - ', countPages)
-  if (ammountPages === countPages) {
+export function enumPermiss() {
+  if(ammountPages === countPages) {
     nextBtn.disabled = true;
     lastPage = true;
   } else {
@@ -31,7 +31,7 @@ function enumPermiss() {
   } else {
     prevBtn.disabled = false;
   }
-  console.log('lastPage - ', lastPage)
+  console.log('lastPage - ', lastPage, 'enumPermiss')
 }
 
 window.addEventListener('DOMContentLoaded', enumPermiss)
@@ -42,6 +42,7 @@ nextBtn.addEventListener('click', () => {
   enumPermiss()
   subwrapFieldRace.style.bottom = ((-1) * maxHeightField * countPages) + 'px';
   updateCountPages()
+  fixHeight()
 })
 
 prevBtn.addEventListener('click', () => {
@@ -50,6 +51,7 @@ prevBtn.addEventListener('click', () => {
   enumPermiss()
   subwrapFieldRace.style.bottom = ((-1) * maxHeightField * countPages) + 'px';
   updateCountPages()
+  fixHeight()
 })
 
 const observer = new MutationObserver(enumPermiss);

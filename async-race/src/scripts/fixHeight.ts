@@ -1,5 +1,5 @@
 import {countUFO} from './createTrack'
-
+import {lastPage, enumPermiss} from './switchPages';
  //import {subwrapFieldRace} from './createTrack'
 
 const contaierTrack = document.querySelector('.container-track') as HTMLDivElement;
@@ -10,20 +10,17 @@ export let maxHeightField: number;
 //import { lastPage } from './switchPages';
 
 export function fixHeight() {
+  enumPermiss()
   containerTrackHeight = contaierTrack.offsetHeight;
-
-  if(countUFO >= 7) {
+  if(countUFO >= 7 && lastPage === false) {
     maxHeightField = containerTrackHeight * 7;
     fieldRace.style.height = maxHeightField + 'px';
-  } else if (countUFO < 7) {
+  } else if (countUFO < 7 && lastPage === true) {
     fieldRace.style.height = (containerTrackHeight * countUFO) + 'px';
+  } else if(countUFO > 7 && lastPage === true) {
+    const ammountItems = countUFO % 7;
+    fieldRace.style.height = (containerTrackHeight * ammountItems) + 'px';
   }
-
-  // if(lastPage && countUFO % 7 !== 0) {
-  //   console.log('last page - ', lastPage)
-  //   fieldRace.style.height = (containerTrackHeight * (countUFO % 7)) + 'px';
-  // }
-  console.log(countUFO, '- count UFO')
 }
 
 document.addEventListener('DOMContentLoaded',fixHeight)
