@@ -1,6 +1,6 @@
 const createBtn = document.getElementById('createBtn') as HTMLButtonElement;
-//const createColor = document.getElementById('createName') as HTMLInputElement;
-const createName = document.getElementById('createColor') as HTMLInputElement;
+const createName = document.getElementById('createName') as HTMLInputElement;
+const createColor = document.getElementById('createColor') as HTMLInputElement;
 export const subwrapFieldRace = document.querySelector('.subwrap-field-race') as HTMLDivElement;
 const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
 export let ammountPages = 0;
@@ -24,13 +24,35 @@ counterID++
 //return nameId
 }
 
+(function() {
+createName.placeholder = 'Enter a name for the craft';
+createName.style.color = '#A20202';
+}())
+
+
 function checkName() {
-  if(createName.value === '#000000') {
-    nameUFO = 'unmamed';
-  } else if(createName.value !== '#000000') {
+  if(createName.value.length === 0) {
+    createName.placeholder = 'Enter a name for the craft';
+    createName.style.color = '#A20202';
+    createBtn.disabled = true;
+  } else if(createName.value.length > 0) {
     nameUFO = createName.value;
   }
+// console.log(createName.value, ' - createName.value')
+ console.log(createColor.value, ' - createColor.value')
 }
+
+function disableCreateBtn() {
+  createName.style.color = "#75507B";
+  if(createName.value.length === 0) {
+    createBtn.disabled = true;
+  } else {
+    createBtn.disabled = false;
+  }
+}
+
+createName.addEventListener("focus", disableCreateBtn);
+createName.addEventListener("input", disableCreateBtn);
 
 function randomColor() {
   let randomColor = Math.floor(Math.random() * 16777215).toString(16);
