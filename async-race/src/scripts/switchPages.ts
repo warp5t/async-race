@@ -2,7 +2,6 @@ import {
   maxHeightField
 } from './fixHeight'
 import {
-  // countUFO,
   ammountPages,
   subwrapFieldRace
 } from './createTrack'
@@ -10,8 +9,7 @@ import {
 const nextBtn = document.querySelector('.page-btn__next') as HTMLButtonElement;
 const prevBtn = document.querySelector('.page-btn__previous') as HTMLButtonElement;
 let countPages = 0, numberPage = 1;
-// let remainPages: number;
-//export let lastPage = false;
+export let lastPage = false;
 
 
 function updateCountPages() {
@@ -20,16 +18,20 @@ function updateCountPages() {
 }
 
 function enumPermiss() {
+  console.log('ammountPages - ', ammountPages, 'countPages - ', countPages)
   if (ammountPages === countPages) {
     nextBtn.disabled = true;
+    lastPage = true;
   } else {
     nextBtn.disabled = false;
+    lastPage = false;
   }
   if(countPages === 0) {
     prevBtn.disabled = true;
   } else {
     prevBtn.disabled = false;
   }
+  console.log('lastPage - ', lastPage)
 }
 
 window.addEventListener('DOMContentLoaded', enumPermiss)

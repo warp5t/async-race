@@ -3,7 +3,7 @@ const createBtn = document.getElementById('createBtn') as HTMLButtonElement;
 const createName = document.getElementById('createColor') as HTMLInputElement;
 export const subwrapFieldRace = document.querySelector('.subwrap-field-race') as HTMLDivElement;
 const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
-export let ammountPages: number;
+export let ammountPages = 0;
 
 import {fixHeight} from './fixHeight'
 
