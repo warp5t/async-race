@@ -10,7 +10,7 @@ import {fixHeight} from './fixHeight'
 let nameId = 'UFO-', counterID = 1, nameUFO = '', svg_ID = 'svg-0';
 export let countUFO = 1;
 
-function updateCountUFO(){
+function updateCountUFO() {
   const GARAGE = document.getElementById('title') as HTMLHeadElement;
   GARAGE.innerText = `GARAGE (${countUFO})`
 }
@@ -30,16 +30,16 @@ createName.style.color = '#A20202';
 }())
 
 
-function checkName() {
-  if(createName.value.length === 0) {
-    createName.placeholder = 'Enter a name for the craft';
-    createName.style.color = '#A20202';
-    createBtn.disabled = true;
-  } else if(createName.value.length > 0) {
+function setName() {
+  if(createName.value.length > 0) {
     nameUFO = createName.value;
   }
-// console.log(createName.value, ' - createName.value')
  console.log(createColor.value, ' - createColor.value')
+}
+
+function setColor() {
+  const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
+  svgID_name.setAttribute('fill', `${createColor.value}`);
 }
 
 function disableCreateBtn() {
@@ -61,7 +61,6 @@ function randomColor() {
   }
   return "#" + randomColor;
 }
-randomColor()
 
 function trackCreator(): HTMLDivElement {
 
@@ -91,8 +90,9 @@ createBtn.addEventListener('click', () => {
   ammountPages = Math.trunc(countUFO / 7);
   updateCountUFO()
   set_ID()
-  checkName()
+  setName()
   subwrapFieldRace.append(trackCreator())
+  setColor();
   fixHeight()
 })
 
