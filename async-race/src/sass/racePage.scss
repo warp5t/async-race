@@ -54,7 +54,7 @@
 }
 .mode-status {
 }
-.mode-status__status {
+.mode-status__start, .mode-status__finish{
   display: inline-flex;
   width: 40px;
   height: 35px;
@@ -71,4 +71,8 @@
 .wrap-image-comp {
   margin-left: auto;
   padding-right: 5%;
+}
+
+.size-icon-race {
+  width: 100%;
 }

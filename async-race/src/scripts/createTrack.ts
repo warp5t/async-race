@@ -7,7 +7,7 @@ export let ammountPages = 0;
 
 import {fixHeight} from './fixHeight'
 
-let nameId = 'UFO-', counterID = 1, nameUFO = '', svg_ID = 'svg-0';
+let nameID = 'UFO-', counter_ID = 1, nameUFO = '', svg_ID = 'svg-0', select_ID = 'SELECT-0', remove_ID = 'REMOVE-0';
 export let countUFO = 1;
 
 function updateCountUFO() {
@@ -16,9 +16,11 @@ function updateCountUFO() {
 }
 
 function set_ID() {
-nameId = 'UFO-' + counterID;
-svg_ID = 'svg-' + counterID;
-counterID++
+nameID = 'UFO-' + counter_ID;
+svg_ID = 'svg-' + counter_ID;
+select_ID = 'SELECT-' + counter_ID;
+remove_ID = 'REMOVE-' + remove_ID;
+counter_ID++
 }
 
 (function() {
@@ -64,9 +66,9 @@ function trackCreator(): HTMLDivElement {
   contaierTrack.classList.add('container-track');
 contaierTrack.innerHTML = `
 <div class="line-mode-1">
-<button class="line-mode-1__btn" id="SELECT">SELECT</button>
-<button class="line-mode-1__btn" id="REMOVE">REMOVE</button>
-  <div class="line-mode-1__name" id="${nameId}">${nameUFO}</div>
+<button class="line-mode-1__btn" id="${select_ID}">SELECT</button>
+<button class="line-mode-1__btn" id="${remove_ID}">REMOVE</button>
+  <div class="line-mode-1__name" id="${nameID}">${nameUFO}</div>
 </div>
 <div class="line-mode-2">
   <div class="wrap-status mode-status">

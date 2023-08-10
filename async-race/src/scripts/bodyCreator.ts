@@ -1,4 +1,6 @@
 import space from '../images/space.jpg'
+import startImage from '../images/finish-flag.png'
+import finishImage from '../images/stop.png'
 
 export const body = document.getElementById('body') as HTMLBodyElement;
 
@@ -35,14 +37,14 @@ body.innerHTML = `
     <div class="subwrap-field-race">
       <div class="container-track">
         <div class="line-mode-1">
-          <button class="line-mode-1__btn" id="SELECT">SELECT</button>
-          <button class="line-mode-1__btn" id="REMOVE">REMOVE</button>
+          <button class="line-mode-1__btn" id="SELECT-0">SELECT</button>
+          <button class="line-mode-1__btn" id="REMOVE-0">REMOVE</button>
           <div class="line-mode-1__name" id="UFO-0">Space Sheep</div>
         </div>
         <div class="line-mode-2">
           <div class="wrap-status mode-status">
-            <div class="mode-status__status">A</div>
-            <div class="mode-status__status">B</div>
+            <button class="mode-status__start" id="SART-0"></button>
+            <button class="mode-status__finish" id="STOP-0"></button>
           </div>
           <div class="wrap-image-bug"></div>
           <div class="wrap-image-comp"></div>
@@ -58,3 +60,14 @@ body.innerHTML = `
 </div>`;
 
 body.style.backgroundImage = `url(${space})`;
+
+const startBtn = document.querySelector('.mode-status__start') as HTMLButtonElement;
+const finishBtn = document.querySelector('.mode-status__finish') as HTMLButtonElement;
+const iconStart = document.createElement('img') as HTMLImageElement;
+const iconFinish = document.createElement('img') as HTMLImageElement;
+startBtn.append(iconStart);
+finishBtn.append(iconFinish)
+iconStart.classList.add('size-icon-race')
+iconFinish.classList.add('size-icon-race')
+iconStart.src = startImage;
+iconFinish.src = finishImage;
