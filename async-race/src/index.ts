@@ -10,5 +10,7 @@ import './scripts/fixHeight'
 import './scripts/switchPages'
 import './scripts/createTrack'
 import './scripts/randomize'
+import './scripts/validationName'
+import './scripts/removeNodes'
 
 
