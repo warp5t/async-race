@@ -1,6 +1,5 @@
 import space from '../images/space.jpg'
-import startImage from '../images/finish-flag.png'
-import finishImage from '../images/stop.png'
+
 
 export const body = document.getElementById('body') as HTMLBodyElement;
 
@@ -60,14 +59,3 @@ body.innerHTML = `
 </div>`;
 
 body.style.backgroundImage = `url(${space})`;
-
-const startBtn = document.querySelector('.mode-status__start') as HTMLButtonElement;
-const finishBtn = document.querySelector('.mode-status__finish') as HTMLButtonElement;
-const iconStart = document.createElement('img') as HTMLImageElement;
-const iconFinish = document.createElement('img') as HTMLImageElement;
-startBtn.append(iconStart);
-finishBtn.append(iconFinish)
-iconStart.classList.add('size-icon-race')
-iconFinish.classList.add('size-icon-race')
-iconStart.src = startImage;
-iconFinish.src = finishImage;
