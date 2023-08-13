@@ -31,7 +31,6 @@ export function enumPermiss() {
   } else {
     prevBtn.disabled = false;
   }
-  console.log('lastPage - ', lastPage, 'enumPermiss')
 }
 
 window.addEventListener('DOMContentLoaded', enumPermiss)

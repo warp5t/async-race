@@ -1,4 +1,7 @@
+// import './setListener'
+
 import {fixHeight} from './fixHeight'
+import { setListenerSelect } from './setListener'
 import startImage from '../images/finish-flag.png'
 import finishImage from '../images/stop.png'
 
@@ -7,11 +10,13 @@ export const createName = document.getElementById('createName') as HTMLInputElem
 const createColor = document.getElementById('createColor') as HTMLInputElement;
 export const subwrapFieldRace = document.querySelector('.subwrap-field-race') as HTMLDivElement;
 const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
+
+
 export let ammountPages = 0;
+let  counter_ID = 1, nameUFO = '';
+export let nameID = 'UFO-', svg_ID = 'svg-0', countUFO = 1, start_ID = 'START-0', stop_ID = 'STOP-0', remove_ID = 'REMOVE-0', select_ID = 'SELECT-0';
 
-
-let nameID = 'UFO-', counter_ID = 1, nameUFO = '', svg_ID = 'svg-0', select_ID = 'SELECT-0', remove_ID = 'REMOVE-0';
-export let countUFO = 1, start_ID = 'SART-0', stop_ID = 'STOP-0';
+setListenerSelect() // for first spase ship
 
 function updateCountUFO() {
   const GARAGE = document.getElementById('title') as HTMLHeadElement;
@@ -32,7 +37,6 @@ counter_ID++
 createName.placeholder = 'Enter a name for the craft';
 createName.style.color = '#A20202';
 }())
-
 
 function setName() {
   if(createName.value.length > 0) {
@@ -55,7 +59,6 @@ function disableCreateBtn() {
 }
 
  function addIconStrtFnsh(){
-  console.log('- addIconStrtFnsh -')
   const startBtn = document.getElementById(`${start_ID}`) as HTMLButtonElement;
   const finishBtn = document.getElementById(`${stop_ID}`) as HTMLButtonElement;
   const iconStart = document.createElement('img') as HTMLImageElement;
@@ -102,17 +105,15 @@ contaierTrack.innerHTML = `
 }
 
 createBtn.addEventListener('click', () => {
-  //if(permissName) {
   countUFO++
   ammountPages = Math.trunc(countUFO / 7);
   updateCountUFO()
   setName()
   set_ID()
   subwrapFieldRace.append(trackCreator())
-  setColor();
-  fixHeight();
-  // addIconStrtFnsh()
-//  }
+  setColor()
+  fixHeight()
+  addIconStrtFnsh()
 })
 
 import {randomName} from './randomize'
@@ -130,6 +131,7 @@ hatchBtn.addEventListener('click', () => {
   svgID_name.setAttribute('fill', randomColor());
   fixHeight()
   addIconStrtFnsh()
+  setListenerSelect()
 })
 
 

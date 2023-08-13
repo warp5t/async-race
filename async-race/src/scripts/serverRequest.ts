@@ -39,6 +39,6 @@ export async function createCar(id:number, name:string, color:string) {
 });
 }
 
-const btnSelect = document.getElementById('SELECT-0') as HTMLButtonElement;
+// const btnSelect = document.getElementById('START-0') as HTMLButtonElement;
 
-btnSelect.addEventListener('click',() => { createCar(6, 'pobeda', 'red') })
+// btnSelect.addEventListener('click',() => { createCar(6, 'pobeda', 'red') })

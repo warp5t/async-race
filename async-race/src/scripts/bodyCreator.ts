@@ -42,7 +42,7 @@ body.innerHTML = `
         </div>
         <div class="line-mode-2">
           <div class="wrap-status mode-status">
-            <button class="mode-status__start" id="SART-0"></button>
+            <button class="mode-status__start" id="START-0"></button>
             <button class="mode-status__finish" id="STOP-0"></button>
           </div>
           <div class="wrap-image-bug"></div>
