@@ -1,6 +1,6 @@
 import {body} from './bodyCreator'
 
-function deleteNodeBody() {
+function deleteNodeBody() { // for deleting excess nodes inside body tag
   if(body.children.length > 1){
     for (let i = 0; i < body.children.length; i++) {
       const child = body.children[i];

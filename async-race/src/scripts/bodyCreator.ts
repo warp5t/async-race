@@ -34,7 +34,7 @@ body.innerHTML = `
   </div>
   <div class="field-race">
     <div class="subwrap-field-race">
-      <div class="container-track">
+      <div class="container-track" id="track-0">
         <div class="line-mode-1">
           <button class="line-mode-1__btn" id="SELECT-0">SELECT</button>
           <button class="line-mode-1__btn" id="REMOVE-0">REMOVE</button>
