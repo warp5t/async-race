@@ -7,6 +7,7 @@ import {
   subwrapFieldRace
 } from './createTrack'
 
+
 const nextBtn = document.querySelector('.page-btn__next') as HTMLButtonElement;
 const prevBtn = document.querySelector('.page-btn__previous') as HTMLButtonElement;
 let countPages = 0, numberPage = 1;
