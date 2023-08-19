@@ -109,7 +109,7 @@ contaierTrack.innerHTML = `
 
 createBtn.addEventListener('click', () => {
   countUFO++
-  ammountPages = Math.trunc(countUFO / 7);
+  ammountPages = Math.trunc(countUFO / 8);
   setName()
   set_ID()
   subwrapFieldRace.append(trackCreator())
@@ -124,7 +124,7 @@ import {spliceName} from './randomize'
 
 hatchBtn.addEventListener('click', () => {
   countUFO++
-  ammountPages = Math.trunc(countUFO / 7);
+  ammountPages = Math.trunc(countUFO / 8);
   randomName()
   set_ID()
   nameUFO = spliceName[spliceName.length -1];
