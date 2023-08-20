@@ -10,7 +10,7 @@ export const subwrapFieldRace = document.querySelector('.subwrap-field-race') as
 const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
 
 
-export let ammountPages = 0;
+export let ammountPages = 0, remainUFO = 0;
 let  counter_ID = 1, nameUFO = '';
 export let nameID = 'UFO-', svg_ID = 'svg-0',
 countUFO = 1, start_ID = 'START-0', stop_ID = 'STOP-0',
@@ -109,7 +109,8 @@ contaierTrack.innerHTML = `
 
 createBtn.addEventListener('click', () => {
   countUFO++
-  ammountPages = Math.trunc(countUFO / 8);
+  remainUFO = countUFO % 7;
+  ammountPages = Math.trunc(countUFO / 7);
   setName()
   set_ID()
   subwrapFieldRace.append(trackCreator())
@@ -124,7 +125,8 @@ import {spliceName} from './randomize'
 
 hatchBtn.addEventListener('click', () => {
   countUFO++
-  ammountPages = Math.trunc(countUFO / 8);
+  remainUFO = countUFO % 7;
+  ammountPages = Math.trunc(countUFO / 7);
   randomName()
   set_ID()
   nameUFO = spliceName[spliceName.length -1];
