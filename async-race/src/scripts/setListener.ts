@@ -3,7 +3,6 @@ import {select_ID,remove_ID} from './createTrack'
 import { fixHeight } from './fixHeight'
 import { updateCountUFO } from './createTrack';
 
-
 export function setListenerSelect() {
   console.log('setListenerSelect')
   const selectBtn = document.getElementById(`${select_ID}`) as HTMLButtonElement;
