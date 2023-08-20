@@ -32,7 +32,7 @@ export function enumPermiss() {
   if(ammountPages > 0 && remainUFO === 0) {
     nextBtn.disabled = true;
   }
-  if(numberPage + 1 !== ammountPages) {
+  if(numberPage + 1 < ammountPages) {
     nextBtn.disabled = false;
   }
   if(countPages === 0) {
