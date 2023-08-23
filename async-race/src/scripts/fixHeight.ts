@@ -21,6 +21,8 @@ export function fixHeight() {
     fieldRace.style.height = (containerTrackHeight * countUFO) + 'px';
   } else if(countUFO > 7 && lastPage === true) {
     const ammountItems = countUFO % 7;
+
+    console.log(' -------- ----- fixHeight term 23 -----------', ammountItems, ' - ammountItems', containerTrackHeight, ' - containerTrackHeight')
     let height:number;
     if(ammountItems === 0) {
       height = containerTrackHeight * 7;
@@ -28,7 +30,6 @@ export function fixHeight() {
       height = containerTrackHeight * ammountItems;
     }
     fieldRace.style.height = height + 'px';
-    console.log('fixHeight term 31', ammountItems, ' - ammountItems', containerTrackHeight, ' - containerTrackHeight')
   }
 }
 

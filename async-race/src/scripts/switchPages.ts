@@ -25,9 +25,11 @@ export function enumPermiss() {
   if(ammountPages === countPages) {
     nextBtn.disabled = true;
     lastPage = true;
+    console.log('term 28')
   } else {
     nextBtn.disabled = false;
     lastPage = false;
+    console.log('term 32')
   }
   if(ammountPages > 0 && remainUFO === 0) {
     nextBtn.disabled = true;
@@ -39,9 +41,11 @@ export function enumPermiss() {
     nextBtn.disabled = true;
     lastPage = true;
     console.log('\n-------------------------- term 41 switchPages -------------------------------\n')
-  } else {
-    lastPage = false;
   }
+  //  else {
+  //   lastPage = false;
+  //   console.log('term 46')
+  // }
   if(countUFO <= 7) {
     nextBtn.disabled = true;
     lastPage = true;
