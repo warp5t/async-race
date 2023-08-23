@@ -127,6 +127,7 @@ hatchBtn.addEventListener('click', () => {
   countUFO++
   remainUFO = countUFO % 7;
   ammountPages = Math.trunc(countUFO / 7);
+  // if(ammountPages > )
   randomName()
   set_ID()
   nameUFO = spliceName[spliceName.length -1];
@@ -139,7 +140,21 @@ hatchBtn.addEventListener('click', () => {
   updateCountUFO()
 })
 
+// import { ammountPages_listener } from './setListener'
 
+// function reassigneCountUFO() {
+//   countUFO = ammountPages_listener;
+// }
+
+// const observer_2 = new MutationObserver(reassigneCountUFO);
+
+// const config = {
+//   attributes: true,
+//   childList: true,
+//   subtree: true
+// };
+
+// observer_2.observe(subwrapFieldRace, config)
 
 // import {body} from './bodyCreator'
 

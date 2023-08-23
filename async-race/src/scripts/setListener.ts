@@ -2,6 +2,10 @@ export let pointUnit = '0';
 import {select_ID,remove_ID} from './createTrack'
 import { fixHeight } from './fixHeight'
 import { updateCountUFO } from './createTrack';
+// import { currentPage } from './switchPages';
+import { countUFO } from './createTrack';
+
+export let ammountPages_listener: number
 
 export function setListenerSelect() {
   console.log('setListenerSelect')
@@ -19,6 +23,7 @@ export function setListenerSelect() {
     pointUnit = idBtn.slice(7, idBtn.length);
     const trackNode = document.getElementById(`track-${pointUnit}`) as HTMLDivElement;
     trackNode.remove()
+    ammountPages_listener = Math.trunc(countUFO / 7);
     updateCountUFO()
     fixHeight()
   })

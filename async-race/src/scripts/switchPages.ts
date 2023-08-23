@@ -4,21 +4,21 @@ import {
 } from './fixHeight'
 import {
   ammountPages,
-  // countUFO,
+  countUFO,
   remainUFO,
   subwrapFieldRace
 } from './createTrack'
 
 
-const nextBtn = document.querySelector('.page-btn__next') as HTMLButtonElement;
+export const nextBtn = document.querySelector('.page-btn__next') as HTMLButtonElement;
 const prevBtn = document.querySelector('.page-btn__previous') as HTMLButtonElement;
-let numberPage = 0;
+export let currentPage = 0;
 export let countPages = 0, lastPage = false;
 
 
 function updateCountPages() {
   const page = document.getElementById('page') as HTMLHeadElement;
-  page.innerText = `page #${numberPage + 1}`;
+  page.innerText = `page #${currentPage + 1}`;
 }
 
 export function enumPermiss() {
@@ -32,8 +32,19 @@ export function enumPermiss() {
   if(ammountPages > 0 && remainUFO === 0) {
     nextBtn.disabled = true;
   }
-  if(numberPage + 1 < ammountPages) {
+  if(currentPage + 1 < ammountPages) {
     nextBtn.disabled = false;
+  }
+  if(currentPage + 1 === ammountPages && currentPage + 1 !== 1 && remainUFO === 0) {
+    nextBtn.disabled = true;
+    lastPage = true;
+    console.log('\n-------------------------- term 41 switchPages -------------------------------\n')
+  } else {
+    lastPage = false;
+  }
+  if(countUFO <= 7) {
+    nextBtn.disabled = true;
+    lastPage = true;
   }
   if(countPages === 0) {
     prevBtn.disabled = true;
@@ -46,7 +57,7 @@ window.addEventListener('DOMContentLoaded', enumPermiss)
 
 nextBtn.addEventListener('click', () => {
   countPages++
-  numberPage++
+  currentPage++
   // enumPermiss()
   subwrapFieldRace.style.bottom = ((-1) * maxHeightField * countPages) + 'px';
   updateCountPages()
@@ -55,7 +66,7 @@ nextBtn.addEventListener('click', () => {
 
 prevBtn.addEventListener('click', () => {
   countPages--
-  numberPage--
+  currentPage--
   // enumPermiss()
   subwrapFieldRace.style.bottom = ((-1) * maxHeightField * countPages) + 'px';
   updateCountPages()

@@ -12,7 +12,7 @@ function deleteNodeBody() { // for deleting excess nodes inside body tag
 }
 
 
-const observer = new MutationObserver(deleteNodeBody);
+const observer_1 = new MutationObserver(deleteNodeBody);
 
 const config = {
   attributes: true,
@@ -20,4 +20,4 @@ const config = {
   subtree: true
 };
 
-observer.observe(body, config)
+observer_1.observe(body, config)

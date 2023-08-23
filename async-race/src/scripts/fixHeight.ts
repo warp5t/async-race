@@ -10,6 +10,7 @@ export let maxHeightField: number;
 //import { lastPage } from './switchPages';
 
 export function fixHeight() {
+  console.log('fixHeight ||-|_|_|_')
   enumPermiss()
   containerTrackHeight = contaierTrack.offsetHeight;
   console.log(countUFO, ' - countUFO,', lastPage, ' - lastPage, ', ' ||| fixHeight ||| ')
@@ -20,7 +21,14 @@ export function fixHeight() {
     fieldRace.style.height = (containerTrackHeight * countUFO) + 'px';
   } else if(countUFO > 7 && lastPage === true) {
     const ammountItems = countUFO % 7;
-    fieldRace.style.height = (containerTrackHeight * ammountItems) + 'px';
+    let height:number;
+    if(ammountItems === 0) {
+      height = containerTrackHeight * 7;
+    } else {
+      height = containerTrackHeight * ammountItems;
+    }
+    fieldRace.style.height = height + 'px';
+    console.log('fixHeight term 31', ammountItems, ' - ammountItems', containerTrackHeight, ' - containerTrackHeight')
   }
 }
 
