@@ -16,6 +16,10 @@ export let nameID = 'UFO-', svg_ID = 'svg-0',
 countUFO = 1, start_ID = 'START-0', stop_ID = 'STOP-0',
 remove_ID = 'REMOVE-0', select_ID = 'SELECT-0',track_ID = 'track-0';
 
+(function(){
+  remainUFO = countUFO % 7;
+}())
+
 setListenerSelect() // for first spase ship
 
 export function updateCountUFO() {
@@ -140,11 +144,13 @@ hatchBtn.addEventListener('click', () => {
   updateCountUFO()
 })
 
-// import { ammountPages_listener } from './setListener'
+import { ammountPages_listener } from './setListener'
 
-// function reassigneCountUFO() {
-//   countUFO = ammountPages_listener;
-// }
+export function reassigneCountUFO() {
+  console.log('- - - - - reassigneCountUFO - - - - -')
+  console.log(ammountPages_listener, ' - ammountPages_listener')
+  ammountPages = ammountPages_listener;
+}
 
 // const observer_2 = new MutationObserver(reassigneCountUFO);
 
