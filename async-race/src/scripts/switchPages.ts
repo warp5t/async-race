@@ -74,16 +74,25 @@ export function enumPermiss() {
     console.log('term 73 switchPages')
   } else if(ammountPages > countPages && remainUFO === 0) {
     lastPage = false;
+    nextBtn.disabled = true;
     console.log('term 75 switchPages')
   } else if(ammountPages < countPages && remainUFO === 0) {
     console.log('term 77 switchPages')
   } else if(ammountPages > countPages && remainUFO > 0) {
     lastPage = false;
+    nextBtn.disabled = false;
     console.log('term 79 switchPages')
   } else if(ammountPages < countPages && remainUFO > 0) {
     console.log('term 81 switchPages')
   }
-}
+  if(countPages === 0) {
+    prevBtn.disabled = true;
+    console.log('term 90 switchPages')
+    } else {
+      prevBtn.disabled = false;
+      console.log('term 93 switchPages')
+    }
+  }
 enumPermiss()
 
 
