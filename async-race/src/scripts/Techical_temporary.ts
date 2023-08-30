@@ -34,5 +34,5 @@ techicalBtn_2.addEventListener('click', () => {
   createSheep('Super Furter', '#ff00ff')
 })
 techicalBtn_3.addEventListener('click', () => {
-  deleteSheep(5)
+  deleteSheep(6)
 })

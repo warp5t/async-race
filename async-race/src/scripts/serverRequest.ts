@@ -65,7 +65,7 @@ export async function updateSheep(id:number, name:string, color:string) {
 }
 
 export async function deleteSheep(id:number) {
-  await fetch(`http://127.0.0.1:3000/garage${id}`, {
+  await fetch(`http://127.0.0.1:3000/garage/${id}`, {
     method: 'DELETE',
   })
   .then((response) => {
