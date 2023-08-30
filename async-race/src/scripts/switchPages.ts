@@ -73,12 +73,12 @@ export function enumPermiss() {
     nextBtn.disabled = true;
     console.log('term 73 switchPages')
   } else if(ammountPages > countPages && remainUFO === 0) {
-    if(countUFO <= 7) {
-    lastPage = true;
-    nextBtn.disabled = true;
+    if(ammountPages - countPages === 1) {
+      lastPage = true;
+      nextBtn.disabled = true;
     } else {
-    lastPage = false;
-    nextBtn.disabled = false;
+      lastPage = false;
+      nextBtn.disabled = false;
     }
     console.log('term 75 switchPages')
   } else if(ammountPages < countPages && remainUFO === 0) {
