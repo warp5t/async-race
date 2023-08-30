@@ -128,20 +128,23 @@ import {randomName} from './randomize'
 import {spliceName} from './randomize'
 
 hatchBtn.addEventListener('click', () => {
-  countUFO++
-  remainUFO = countUFO % 7;
-  ammountPages = Math.trunc(countUFO / 7);
-  // if(ammountPages > )
-  randomName()
-  set_ID()
-  nameUFO = spliceName[spliceName.length -1];
-  subwrapFieldRace.append(trackCreator())
-  const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
-  svgID_name.setAttribute('fill', randomColor());
-  fixHeight()
-  addIconStrtFnsh()
-  setListenerSelect()
-  updateCountUFO()
+  let ammountSpaceCraft = 100;
+  while(ammountSpaceCraft > 0) {
+    countUFO++
+    remainUFO = countUFO % 7;
+    ammountPages = Math.trunc(countUFO / 7);
+    randomName()
+    set_ID()
+    nameUFO = spliceName[spliceName.length -1];
+    subwrapFieldRace.append(trackCreator())
+    const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
+    svgID_name.setAttribute('fill', randomColor());
+    fixHeight()
+    addIconStrtFnsh()
+    setListenerSelect()
+    updateCountUFO()
+    ammountSpaceCraft--
+  }
 })
 
 import { ammountPages_listener } from './setListener'
