@@ -2,14 +2,14 @@ export async function getSheeps() {
   await fetch('http://127.0.0.1:3000/garage')
   .then(data => data.json())
   .then(data => console.log(data, typeof(data)))
-  .catch(err => console.error(err))
+  .catch(error => console.error(error))
 }
 
 export async function getSheep(id:number) {
   await fetch('http://127.0.0.1:3000/garage/'+id)
   .then(data => data.json())
   .then(data => console.log(data, typeof(data)))
-  .catch(err => console.error(err))
+  .catch(error => console.error(error))
 }
 
 export async function createSheep(name:string, color:string) {
@@ -78,4 +78,24 @@ export async function deleteSheep(id:number) {
     .catch((error) => {
       console.error('An error occurred:', error)
   })
+}
+
+export async function stpStrtDriveEngine(id:number, status:string) {
+  await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
+    method: 'PATCH',
+  })
+  .then(data => data.json())
+  .then(data => console.log(data.velocity, data.distance, data.success, typeof(data)))
+  .catch((error) => {
+    console.error('An error occurred:', error)
+  })
+}
+
+export async function getWinners() {
+  await fetch(`http://127.0.0.1:3000/winners`, {
+    method: 'GET',
+  })
+  .then(data => data.json())
+  .then(data => console.log(data, typeof(data)))
+  .catch(error => console.error(error))
 }
