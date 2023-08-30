@@ -151,7 +151,7 @@ export function reassigneCountUFO() {
   console.log(ammountPages_listener, ' - ammountPages_listener')
   const subwrapField = document.querySelector('.subwrap-field-race') as HTMLDivElement;
   countUFO = subwrapField.children.length;
-  console.log(countUFO, 'reassingCountUFO  --- line 154')
+  remainUFO = subwrapField.children.length % 7;
   ammountPages = ammountPages_listener;
 }
 
