@@ -2,7 +2,7 @@ import {countUFO} from './createTrack'
 import {lastPage, enumPermiss} from './switchPages';
  //import {subwrapFieldRace} from './createTrack'
 
-const contaierTrack = document.querySelector('.container-track') as HTMLDivElement;
+
 let containerTrackHeight: number;
 const fieldRace = document.querySelector('.field-race') as HTMLDivElement;
 export let maxHeightField: number;
@@ -10,6 +10,7 @@ export let maxHeightField: number;
 //import { lastPage } from './switchPages';
 
 export function fixHeight() {
+  const contaierTrack = document.querySelector('.container-track') as HTMLDivElement;
   console.log('fixHeight ||-|_|_|_')
   enumPermiss()
   containerTrackHeight = contaierTrack.offsetHeight;
