@@ -167,18 +167,3 @@ export function reassigneCountUFO() {
 // };
 
 // observer_2.observe(subwrapFieldRace, config)
-
-// import {body} from './bodyCreator'
-
-// window.addEventListener('beforeunload', function() {
-//   const bodyUpdating = document.getElementById('body') as HTMLBodyElement;
-//   localStorage.setItem('condition', bodyUpdating.innerHTML)
-// });
-
-
-// window.addEventListener('load', function() {
-//   const condition = localStorage.getItem('condition');
-//   if (condition !== null) {
-//     body.innerHTML = condition;
-//   }
-// });

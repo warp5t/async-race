@@ -14,26 +14,11 @@ export const spliceName: Array<string> = [];
     }
     const extName = spaceShip[firstIndex] + ' ' + spaceModel[secondIndex];
     if(permissSplice && !spliceName.includes(extName)) {
-      if(spaceShip[firstIndex] === undefined){
-        console.log(firstIndex, '- firstIndex')
-      }
       spliceName.push(extName)
       constrPerm = false;
     }
   }
 }
-
-// class RandomName {
-//   constructor() {
-//     this.spaceShip: Arrray<string> = ['Soyuz','Shenzhou','SpaceShipTwo','Crew','New','International','Shepard','Dragon','Space','Station','Tiangong','Vostok','Mercury','X-15','Voskhod','Gemini','Apollo','Shuttle','SpaceShipOne','Salyut','Almaz','Skylab','Mir','Starliner','Orion','Starship','Gaganyaan','Orel','Zeus','Era'];
-//     this.spaceModel = ['I','II','III','IV','V','VI','Moonrakers','Theseus','Galactica','Hyperion','Moya','Ishimura','Enterprise','Discovery','Voyager ','Klingon','Millennium','Star','Bioship ','Intergalactic ','Icarus','Spaceflight','Ranger','Interpid','Defiant','Protostar','Akira','Obena','Exelsior','Alies'];
-//     this.spliceName: Array<string> = [];
-//   }
-//   randoming(){
-
-//   }
-// }
-
 
 export function wrapRand() {
   let counter = 100;
