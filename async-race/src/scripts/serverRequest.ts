@@ -1,20 +1,23 @@
-export async function getSheeps() {
+export async function getShips() {
   await fetch('http://127.0.0.1:3000/garage')
   .then(data => data.json())
-  .then(data => console.log(data, typeof(data)))
+  .then(data => {
+    // shipsList = data
+    console.log(data)
+  })
   .catch(error => console.error(error))
 }
 
-export async function getSheep(id:number) {
+export async function getShip(id:number) {
   await fetch('http://127.0.0.1:3000/garage/'+id)
   .then(data => data.json())
   .then(data => console.log(data, typeof(data)))
   .catch(error => console.error(error))
 }
 
-export async function createSheep(name:string, color:string) {
+export async function createShip(name:string, color:string) {
 
-  const newSheep = {
+  const newShip = {
     name: name,
     color: color,
   };
@@ -24,7 +27,7 @@ export async function createSheep(name:string, color:string) {
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify(newSheep),
+  body: JSON.stringify(newShip),
 })
 .then(response => {
   if (response.ok) {
@@ -38,9 +41,9 @@ export async function createSheep(name:string, color:string) {
 });
 }
 
-export async function updateSheep(id:number, name:string, color:string) {
+export async function updateShip(id:number, name:string, color:string) {
 
-  const newSheep = {
+  const newShip = {
     name: name,
     color: color,
   };
@@ -50,7 +53,7 @@ export async function updateSheep(id:number, name:string, color:string) {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(newSheep),
+    body: JSON.stringify(newShip),
   })
   .then((response) => {
     if (response.ok) {
@@ -64,7 +67,7 @@ export async function updateSheep(id:number, name:string, color:string) {
   })
 }
 
-export async function deleteSheep(id:number) {
+export async function deleteShip(id:number) {
   await fetch(`http://127.0.0.1:3000/garage/${id}`, {
     method: 'DELETE',
   })
@@ -111,7 +114,7 @@ export async function getWinner(id:number) {
 
 export async function createWinner(id:number, wins:number, time:number) {
 
-  const winnerSheep =  {
+  const winnerShip =  {
     id: id,
     wins: wins,
     time: time
@@ -122,7 +125,7 @@ export async function createWinner(id:number, wins:number, time:number) {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(winnerSheep),
+    body: JSON.stringify(winnerShip),
   })
   .then(response => {
     if (response.ok) {
@@ -154,7 +157,7 @@ export async function deleteWinner(id:number) {
 
 export async function updateWinner(id:number, wins:number, time:number) {
 
-  const updateSheep = {
+  const updateShip = {
     wins: wins,
     time: time,
   };
@@ -164,7 +167,7 @@ export async function updateWinner(id:number, wins:number, time:number) {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(updateSheep),
+    body: JSON.stringify(updateShip),
   })
   .then((response) => {
     if (response.ok) {

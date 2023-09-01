@@ -5,7 +5,7 @@
 // import { countPages } from "./switchPages";
 // import { remainUFO } from "./createTrack";
 
-import { updateSheep, getSheeps, getSheep, createSheep, deleteSheep, stpStrtDriveEngine,
+import { updateShip, getShips, getShip, createShip, deleteShip, stpStrtDriveEngine,
 getWinners, getWinner, createWinner, deleteWinner, updateWinner } from "./serverRequest";
 
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
@@ -21,9 +21,10 @@ const  techicalBtn_7 = document.createElement('button') as HTMLButtonElement;
 const  techicalBtn_8 = document.createElement('button') as HTMLButtonElement;
 const  techicalBtn_9 = document.createElement('button') as HTMLButtonElement;
 const  techicalBtn_10 = document.createElement('button') as HTMLButtonElement;
+const  techicalBtn_11 = document.createElement('button') as HTMLButtonElement;
 const arrTechBtn = [techicalBtn, techicalBtn_0, techicalBtn_1, techicalBtn_2,
 techicalBtn_3, techicalBtn_4, techicalBtn_5, techicalBtn_6, techicalBtn_7,
-techicalBtn_8,techicalBtn_9, techicalBtn_10];
+techicalBtn_8,techicalBtn_9, techicalBtn_10, techicalBtn_11];
 
 arrTechBtn.forEach(element => {
   element.style.height = '70px';
@@ -31,31 +32,32 @@ arrTechBtn.forEach(element => {
   wrap.append(element);
 });
 
-let switcher = true;
+let switcher = false;
 
 techicalBtn.addEventListener('click', () =>{
-  getSheeps()
+  getShips()
 })
 techicalBtn.innerText = 'getSheeps';
 techicalBtn_0.addEventListener('click', () => {
-  getSheep(1)
+  getShip(1)
 })
 techicalBtn_0.innerText = 'getSheep';
 techicalBtn_1.addEventListener('click', () => {
-  updateSheep(1,'Rusted Tank', '#ff00ff')
+  updateShip(1,'Rusted Tank', '#ff00ff')
 })
 techicalBtn_1.innerText = 'updateSheep';
 techicalBtn_2.addEventListener('click', () => {
-  createSheep('Super Furter', '#ff00ff')
+  createShip('Super Furter', '#ff00ff')
 })
 techicalBtn_2.innerText = 'createSheep';
 techicalBtn_3.addEventListener('click', () => {
-  deleteSheep(6)
+  deleteShip(6)
 })
 techicalBtn_3.innerText = 'deleteSheep';
 techicalBtn_4.addEventListener('click', () => {
   if(!switcher) {
     stpStrtDriveEngine(3,'started')
+    stpStrtDriveEngine(3,'drive');
     switcher = true;
   } else {
     stpStrtDriveEngine(3,'stopped')
@@ -88,3 +90,16 @@ techicalBtn_10.addEventListener('click', () => {
   updateWinner(3, 3, 33)
 })
 techicalBtn_10.innerText = 'updateWinner';
+
+techicalBtn_11.addEventListener('click', () => {
+  // console.log(shipsList, ' - sheepList')
+  // getShips()
+  // shipsList.forEach((element) => {
+  //   console.log(element.id, typeof(element.id))
+  //   deleteShip(element.id)
+  // })
+  // createShip('Space Sheep', '#7bbaf0')
+})
+techicalBtn_11.innerText = 'sheepList';
+
+

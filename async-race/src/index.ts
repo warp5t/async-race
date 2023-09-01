@@ -15,5 +15,6 @@ import './scripts/validationName'
 import './scripts/removeNodes'
 import './scripts/modesSheep'
 import './scripts/Techical_temporary'
+import './scripts/clearUpdateGarage'
 
 
