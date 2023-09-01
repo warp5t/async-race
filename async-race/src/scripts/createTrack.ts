@@ -1,5 +1,5 @@
 import {fixHeight} from './fixHeight'
-import { setListenerSelect } from './setListener'
+import { setListenerSelect } from './selectRemoveListener'
 import startImage from '../images/finish-flag.png'
 import finishImage from '../images/stop.png'
 
@@ -150,7 +150,7 @@ hatchBtn.addEventListener('click', () => {
   }
 })
 
-import { ammountPages_listener } from './setListener'
+import { ammountPages_listener } from './selectRemoveListener'
 
 export function reassigneCountUFO() {
   console.log('- - - - - reassigneCountUFO - - - - -')

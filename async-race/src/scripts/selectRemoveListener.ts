@@ -3,6 +3,7 @@ import {select_ID,remove_ID} from './createTrack'
 import { fixHeight } from './fixHeight'
 import { updateCountUFO } from './createTrack';
 import { reassigneCountUFO } from './createTrack';
+import { deleteShip, deleteWinner } from './serverRequest';
 export let ammountPages_listener: number
 
 export function setListenerSelect() {
@@ -17,7 +18,11 @@ export function setListenerSelect() {
     const idBtn = selectBtn.id;
     pointUnit = idBtn.slice(7, idBtn.length);
     const trackNode = document.getElementById(`track-${pointUnit}`) as HTMLDivElement;
+    console.log(pointUnit, typeof(pointUnit))
     trackNode.remove()
+    console.log(Number(pointUnit)+1)
+    deleteShip(Number(pointUnit)+1);
+    deleteWinner(Number(pointUnit)+1);
     const subwrapField = document.querySelector('.subwrap-field-race') as HTMLDivElement;
     ammountPages_listener = Math.trunc(subwrapField.children.length / 7);
     reassigneCountUFO()

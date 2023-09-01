@@ -1,4 +1,4 @@
-import { pointUnit } from './setListener'
+import { pointUnit } from './selectRemoveListener'
 
 const updateBtn = document.getElementById('updateBtn') as HTMLButtonElement;
 const updateColor = document.getElementById('updateColor') as HTMLInputElement;

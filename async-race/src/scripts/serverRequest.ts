@@ -145,9 +145,9 @@ export async function deleteWinner(id:number) {
   })
   .then((response) => {
     if(response.ok) {
-      console.log('Sheep deleted succesfully')
+      console.log('Winner deleted succesfully')
     } else {
-      console.error('Failed to delete sheep')
+      console.error('Failed to delete winner or winner absent with such id')
     }
   })
     .catch((error) => {
