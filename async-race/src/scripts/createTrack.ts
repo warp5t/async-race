@@ -48,11 +48,13 @@ function setName() {
   if(createName.value.length > 0) {
     nameUFO = createName.value;
   }
+  return nameUFO
 }
 
 function setColor() {
   const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
   svgID_name.setAttribute('fill', `${createColor.value}`);
+  return createColor.value
 }
 
 function disableCreateBtn() {
@@ -110,15 +112,15 @@ contaierTrack.innerHTML = `
   contaierTrack.id = `track-${counter_ID - 1}`
   return contaierTrack
 }
+import { createShip } from './serverRequest';
 
 createBtn.addEventListener('click', () => {
   countUFO++
   remainUFO = countUFO % 7;
   ammountPages = Math.trunc(countUFO / 7);
-  setName()
   set_ID()
   subwrapFieldRace.append(trackCreator())
-  setColor()
+  createShip(setName(),setColor())
   fixHeight()
   addIconStrtFnsh()
   updateCountUFO()
@@ -126,19 +128,20 @@ createBtn.addEventListener('click', () => {
 
 import {randomName} from './randomize'
 import {spliceName} from './randomize'
-
 hatchBtn.addEventListener('click', () => {
   let ammountSpaceCraft = 100;
   while(ammountSpaceCraft > 0) {
     countUFO++
     remainUFO = countUFO % 7;
     ammountPages = Math.trunc(countUFO / 7);
+    const colorShip = randomColor();
     randomName()
     set_ID()
     nameUFO = spliceName[spliceName.length -1];
+    createShip(nameUFO, colorShip)
     subwrapFieldRace.append(trackCreator())
     const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
-    svgID_name.setAttribute('fill', randomColor());
+    svgID_name.setAttribute('fill', colorShip);
     fixHeight()
     addIconStrtFnsh()
     setListenerSelect()

@@ -12,10 +12,11 @@ export const spliceName: Array<string> = [];
     if(firstIndex < 30 && secondIndex < 30) {
       permissSplice = true;
     }
-    const extName = spaceShip[firstIndex] + ' ' + spaceModel[secondIndex];
+    const extName:string = spaceShip[firstIndex] + ' ' + spaceModel[secondIndex];
     if(permissSplice && !spliceName.includes(extName)) {
       spliceName.push(extName)
       constrPerm = false;
+      return extName
     }
   }
 }
