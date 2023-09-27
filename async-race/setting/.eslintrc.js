@@ -19,8 +19,8 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-explicit-any': 2
   },
-  // globals: {          //    npm install --save-dev webpack-node-external
-  //   '__dirname': 'readonly'
-  // }
+  globals: {          //    npm install --save-dev webpack-node-external
+    '__dirname': 'readonly'
+  }
 }
 

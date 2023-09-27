@@ -92,13 +92,7 @@ techicalBtn_10.addEventListener('click', () => {
 techicalBtn_10.innerText = 'updateWinner';
 
 techicalBtn_11.addEventListener('click', () => {
-  // console.log(shipsList, ' - sheepList')
-  // getShips()
-  // shipsList.forEach((element) => {
-  //   console.log(element.id, typeof(element.id))
-  //   deleteShip(element.id)
-  // })
-  // createShip('Space Sheep', '#7bbaf0')
+ console.log('techicalBtn_11')
 })
 techicalBtn_11.innerText = 'sheepList';
 

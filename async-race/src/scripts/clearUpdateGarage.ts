@@ -9,11 +9,11 @@ interface Ship {
   name: string;
   color: string;
 }
-export let shipsList: Ship[];
+let carList: Ship[];
 
 function initiate() {
   getShips()
-  shipsList.forEach((element) => {
+  carList.forEach((element) => {
     console.log(element.id, typeof (element.id))
     deleteShip(element.id)
   })
@@ -26,9 +26,9 @@ async function initiatingData() {
   await fetch('http://127.0.0.1:3000/garage')
     .then(data => data.json())
     .then(data => {
-      shipsList = data
+      carList = data
       console.log('server is running ------------------- clearUpdateGarage')
-      shipsList.forEach((element) => {
+      carList.forEach((element) => {
         if (element.name === 'Tesla' || element.name === 'BMW' || element.name === 'Mersedes' || element.name === 'Ford') {
           counter++
         }
