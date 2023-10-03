@@ -23,7 +23,14 @@ window.addEventListener('beforeunload', () => {
   localStorage.setItem('contentBody', JSON.stringify(bodyContainer));
 });
 
-document.addEventListener('load', function() {
+export function saveStorage_fn(){
+  const bodyContainer = body.innerHTML;
+  localStorage.setItem('contentBody', JSON.stringify(bodyContainer));
+}
+
+export function loadStorage_fn() {
+
+// document.addEventListener('load', function() {
     // setTimeout( ()=> {
 // const contentBodySave: BodyNodes = JSON.parse(localStorage.getItem('contentBody') || '{}');
     const contentBodySave = JSON.parse(localStorage.getItem('contentBody') || '{}');
@@ -35,20 +42,23 @@ document.addEventListener('load', function() {
     .replace(/&amp;nbsp;/g, " ")
     .replace(/&amp;amp;/g, "&");
     body.innerHTML = String(formattedString);
+    // body.innerHTML = 'checking'
     // body.insertAdjacentHTML('afterbegin', contentBodySave.content)
     console.log(formattedString, ' - formattedString');
     console.log('Page loaded!');
     // },3000)
   
-    function setFunction(){
+    function setFunction() {
         common_s()
         createTrack_s()
         fixHeight_s()
         switchPages_s()
         updateTrack_s()
         validationName_s()
-    Technical_temporary_s()
+        Technical_temporary_s()
 }
 setTimeout(setFunction, 3000)
-});
+//});
+}
+// loadStorage_fn()
 

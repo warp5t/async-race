@@ -1,3 +1,35 @@
+ export let ammountShips = 0;
+ 
+ export async function resetCount() {
+   await fetch('http://127.0.0.1:3000/garage')
+   .then(data => data.json())
+   .then(data => {
+     // shipsList = data
+     ammountShips = data.length;
+     // console.log(data.length)
+    })
+    .then( async() => {
+
+    while (ammountShips > 1) { 
+    await fetch(`http://127.0.0.1:3000/garage/${ammountShips}`, {
+    method: 'DELETE',
+  })
+  .then((response) => {
+    if(response.ok) {
+      console.log('Sheep deleted succesfully')
+    } else {
+      console.error('Failed to delete sheep')
+    }
+  })
+    .catch((error) => {
+      console.error('An error occurred:', error)
+  })   
+      ammountShips--
+    }
+  })
+  .catch(error => console.error(error))
+}
+
 export async function getShips() {
   await fetch('http://127.0.0.1:3000/garage')
   .then(data => data.json())
