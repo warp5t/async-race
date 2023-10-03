@@ -3,13 +3,8 @@ const inputTxtCreate = document.getElementById('createName') as HTMLInputElement
 const btnCreate = document.getElementById('createBtn') as HTMLButtonElement;
  import {body} from './bodyCreator'
 
-btnCreate.addEventListener('click', () => {
-  const fieldTxt = document.createElement('div') as HTMLDivElement;
-  fieldTxt.innerText = inputTxtCreate.value;
-  body.append(fieldTxt)
-})
-
-import earth from '../images/earth.png'
+ 
+ import earth from '../images/earth.png'
 
 const wrapImageEarth = document.querySelector('.wrap-image-comp') as HTMLDivElement;
 const earthImage = document.createElement('img');
@@ -24,4 +19,13 @@ export const unitID = document.getElementById('svg-0') as HTMLOrSVGImageElement;
 
 unitID.setAttribute('fill', '#4d5d53');
 
+export function common_s() {
+  btnCreate.addEventListener('click', () => {
+    const fieldTxt = document.createElement('div') as HTMLDivElement;
+    fieldTxt.innerText = inputTxtCreate.value;
+    body.append(fieldTxt)
+  })
+}
+
+common_s()
 

@@ -34,6 +34,8 @@ arrTechBtn.forEach(element => {
 
 let switcher = false;
 
+export function Technical_temporary_s() { 
+
 techicalBtn.addEventListener('click', () =>{
   getShips()
 })
@@ -95,5 +97,5 @@ techicalBtn_11.addEventListener('click', () => {
  console.log('techicalBtn_11')
 })
 techicalBtn_11.innerText = 'sheepList';
-
-
+}
+Technical_temporary_s()

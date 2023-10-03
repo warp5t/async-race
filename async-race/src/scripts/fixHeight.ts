@@ -26,4 +26,7 @@ export function fixHeight() {
   }
 }
 
-document.addEventListener('DOMContentLoaded',fixHeight)
+export function fixHeight_s() {
+  document.addEventListener('DOMContentLoaded',fixHeight)
+}
+fixHeight_s()

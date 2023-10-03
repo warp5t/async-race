@@ -46,6 +46,7 @@ export function enumPermiss() {
 }
 enumPermiss()
 
+export function switchPages_s() { 
 
 window.addEventListener('DOMContentLoaded', enumPermiss)
 
@@ -62,7 +63,8 @@ prevBtn.addEventListener('click', () => {
   updateCountPages()
   fixHeight()
 })
-
+}
+switchPages_s()
 // const observer = new MutationObserver(enumPermiss);
 
 // const config = {

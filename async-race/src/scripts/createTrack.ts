@@ -7,7 +7,6 @@ export const createBtn = document.getElementById('createBtn') as HTMLButtonEleme
 export const createName = document.getElementById('createName') as HTMLInputElement;
 const createColor = document.getElementById('createColor') as HTMLInputElement;
 export const subwrapFieldRace = document.querySelector('.subwrap-field-race') as HTMLDivElement;
-const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
 
 
 export let ammountPages = 0, remainUFO = 0;
@@ -80,8 +79,6 @@ function disableCreateBtn() {
 }
 addIconStrtFnsh()
 
-createName.addEventListener("focus", disableCreateBtn);
-createName.addEventListener("input", disableCreateBtn);
 
 function randomColor() {
   let randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -99,9 +96,9 @@ contaierTrack.innerHTML = `
 <div class="line-mode-1">
 <button class="line-mode-1__btn" id="${select_ID}">SELECT</button>
 <button class="line-mode-1__btn" id="${remove_ID}">REMOVE</button>
-  <div class="line-mode-1__name" id="${nameID}">${nameUFO}</div>
-</div>
-<div class="line-mode-2">
+<div class="line-mode-1__name" id="${nameID}">${nameUFO}</div>
+  </div>
+  <div class="line-mode-2">
   <div class="wrap-status mode-status">
   <button class="mode-status__start" id="${start_ID}"></button>
   <button class="mode-status__finish" id="${stop_ID}"></button>
@@ -114,41 +111,9 @@ contaierTrack.innerHTML = `
 }
 import { createShip } from './serverRequest';
 
-createBtn.addEventListener('click', () => {
-  countUFO++
-  remainUFO = countUFO % 7;
-  ammountPages = Math.trunc(countUFO / 7);
-  set_ID()
-  subwrapFieldRace.append(trackCreator())
-  createShip(setName(),setColor())
-  fixHeight()
-  addIconStrtFnsh()
-  updateCountUFO()
-})
 
 import {randomName} from './randomize'
 import {spliceName} from './randomize'
-hatchBtn.addEventListener('click', () => {
-  let ammountSpaceCraft = 100;
-  while(ammountSpaceCraft > 0) {
-    countUFO++
-    remainUFO = countUFO % 7;
-    ammountPages = Math.trunc(countUFO / 7);
-    const colorShip = randomColor();
-    randomName()
-    set_ID()
-    nameUFO = spliceName[spliceName.length -1];
-    createShip(nameUFO, colorShip)
-    subwrapFieldRace.append(trackCreator())
-    const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
-    svgID_name.setAttribute('fill', colorShip);
-    fixHeight()
-    addIconStrtFnsh()
-    setListenerSelect()
-    updateCountUFO()
-    ammountSpaceCraft--
-  }
-})
 
 import { ammountPages_listener } from './selectRemoveListener'
 
@@ -161,6 +126,44 @@ export function reassigneCountUFO() {
   ammountPages = ammountPages_listener;
 }
 
+export function createTrack_s() {
+  const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
+  createName.addEventListener("focus", disableCreateBtn);
+  createName.addEventListener("input", disableCreateBtn);
+  createBtn.addEventListener('click', () => {
+    countUFO++
+    remainUFO = countUFO % 7;
+    ammountPages = Math.trunc(countUFO / 7);
+    set_ID()
+    subwrapFieldRace.append(trackCreator())
+    createShip(setName(),setColor())
+    fixHeight()
+    addIconStrtFnsh()
+    updateCountUFO()
+  })
+  hatchBtn.addEventListener('click', () => {
+    let ammountSpaceCraft = 100;
+    while(ammountSpaceCraft > 0) {
+      countUFO++
+      remainUFO = countUFO % 7;
+      ammountPages = Math.trunc(countUFO / 7);
+      const colorShip = randomColor();
+      randomName()
+      set_ID()
+      nameUFO = spliceName[spliceName.length -1];
+      createShip(nameUFO, colorShip)
+      subwrapFieldRace.append(trackCreator())
+      const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
+      svgID_name.setAttribute('fill', colorShip);
+      fixHeight()
+      addIconStrtFnsh()
+      setListenerSelect()
+      updateCountUFO()
+      ammountSpaceCraft--
+    }
+  })
+}
+createTrack_s()
 // const observer_2 = new MutationObserver(reassigneCountUFO);
 
 // const config = {

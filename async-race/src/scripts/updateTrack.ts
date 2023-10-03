@@ -5,7 +5,7 @@ const updateBtn = document.getElementById('updateBtn') as HTMLButtonElement;
 const updateColor = document.getElementById('updateColor') as HTMLInputElement;
 const updateName = document.getElementById('updateName') as HTMLInputElement;
 
-
+export function updateTrack_s() { 
 
 updateBtn.addEventListener('click', () => {
   const nameCraft = document.getElementById(`UFO-${pointUnit}`) as HTMLDivElement;
@@ -16,3 +16,5 @@ updateBtn.addEventListener('click', () => {
   const idServerShip = Number(pointUnit) + 1;
   updateShip(idServerShip, updateName.value, updateColor.value)
 })
+}
+updateTrack_s()

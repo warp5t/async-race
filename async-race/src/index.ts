@@ -13,8 +13,10 @@ import './scripts/selectRemoveListener'
 import './scripts/updateTrack'
 import './scripts/validationName'
 import './scripts/removeNodes'
-import './scripts/modesSheep'
-import './scripts/Techical_temporary'
+import './scripts/modesShip'
+import './scripts/Technical_temporary'
 import './scripts/clearUpdateGarage'
+import './scripts/localStorage'
+
 
 
