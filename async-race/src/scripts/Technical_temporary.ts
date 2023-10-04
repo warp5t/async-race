@@ -11,6 +11,8 @@ import { updateShip, getShips, getShip, createShip, deleteShip, stpStrtDriveEngi
 getWinners, getWinner, createWinner, deleteWinner, updateWinner } from "./serverRequest";
 import { loadStorage_fn, saveStorage_fn } from "./localStorage";
 
+import { switchArenaWinn } from "./switchArenaWinners";
+
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
 const  techicalBtn = document.createElement('button') as HTMLButtonElement;
 const  techicalBtn_0 = document.createElement('button') as HTMLButtonElement;
@@ -102,8 +104,10 @@ techicalBtn_10.innerText = 'update\nWinner';
 
 techicalBtn_11.addEventListener('click', () => {
  console.log('techicalBtn_11')
+ switchArenaWinn()
+
 })
-techicalBtn_11.innerText = 'sheep\nList';
+techicalBtn_11.innerText = 'switch\nWinner\nArena';
 
 techicalBtn_12.addEventListener('click', () => {
   console.log('techicalBtn_12')
