@@ -5,7 +5,7 @@
 // import { countPages } from "./switchPages";
 // import { remainUFO } from "./createTrack";
 
-import { ammountShips, resetCount } from "./serverRequest";
+import { resetWinners, resetCount } from "./serverRequest";
 
 import { updateShip, getShips, getShip, createShip, deleteShip, stpStrtDriveEngine,
 getWinners, getWinner, createWinner, deleteWinner, updateWinner } from "./serverRequest";
@@ -122,7 +122,7 @@ techicalBtn_12.addEventListener('click', () => {
   // const ammountShip = await getShips();
   // console.log(ammountShip, ' - length')
    resetCount()
-   console.log(ammountShips)
+   resetWinners()
 });
   
  techicalBtn_14.innerText = 'techical\nBtn_14';
