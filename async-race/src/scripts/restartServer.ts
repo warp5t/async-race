@@ -1,7 +1,7 @@
-// import { resetCount,resetWinners } from "./serverRequest";
+import { resetCount,resetWinners } from "./serverRequest";
 
 window.addEventListener('DOMContentLoaded', () => {
-    //  resetCount()
-    //  resetWinners()
+     resetCount()
+     resetWinners()
  });
 

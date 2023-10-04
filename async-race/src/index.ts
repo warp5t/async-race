@@ -18,6 +18,7 @@ import './scripts/Technical_temporary'
 import './scripts/clearUpdateGarage'
 import './scripts/localStorage'
 import './scripts/restartServer'
+import './scripts/switchArenaWinners'
 
 
 

@@ -1,11 +1,16 @@
-import {spliceName} from './randomize'
-import { createName,createBtn } from './createTrack'
+import {
+  spliceName
+} from './randomize'
+import {
+  createName,
+  createBtn
+} from './createTrack'
 
 export let permissName = true;
 
-export function nameValidation(name:string) {
+export function nameValidation(name: string) {
   permissName = spliceName.includes(name);
-  if(permissName) {
+  if (permissName) {
     createName.placeholder = 'This name already exists';
     createBtn.disabled = true;
   } else {
@@ -16,13 +21,13 @@ export function nameValidation(name:string) {
 
 export function validationName_s() {
 
-createName.addEventListener("focus", () => {
-  nameValidation(createName.value)
-})
+  createName.addEventListener("focus", () => {
+    nameValidation(createName.value)
+  })
 
-createName.addEventListener("input", () => {
-  nameValidation(createName.value)
-})
+  createName.addEventListener("input", () => {
+    nameValidation(createName.value)
+  })
 
 }
 validationName_s()

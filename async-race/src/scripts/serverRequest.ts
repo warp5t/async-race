@@ -1,7 +1,3 @@
-// let ammountShips = 0;
-// let ammountWinners = 0;
-
-
 export async function resetCount() {
   await fetch('http://127.0.0.1:3000/garage')
     .then(data => data.json())
