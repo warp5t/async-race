@@ -1,3 +1,10 @@
+.race-arena {
+  display: flex;
+  flex-direction: column;
+}
+.hide-arena {
+  display: none;
+}
 .container-mode {
 }
 .container-mode__btn {

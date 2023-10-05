@@ -1,6 +1,7 @@
 import './sass/common.scss'
 import './sass/css-editor.scss'
 import './sass/racePage.scss'
+import './sass/winnerDesk.scss'
 
 import './scripts/common'
 import './scripts/bodyCreator'

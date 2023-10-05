@@ -129,6 +129,6 @@ techicalBtn_12.addEventListener('click', () => {
    resetWinners()
 });
   
- techicalBtn_14.innerText = 'techical\nBtn_14';
+ techicalBtn_14.innerText = 'reset\nCount\nWinners';
 }
 Technical_temporary_s()
