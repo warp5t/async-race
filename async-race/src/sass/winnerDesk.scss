@@ -1,16 +1,20 @@
 .winners-desk {
     display: none;
+    width: 34%;
+   
 }
 .show-winner {
 display:flex;
 flex-direction: column;
 }
-.winner-desk__head {
+.winner-desk__wrap-head {
+    display: flex;
+    background-color: #0105ff;
+    color: aliceblue; 
+    padding: 10px 15px 10px 15px;
+    justify-content:space-between;
 }
 
-.winner-desk__title {
-}
-.winner-desk__cont-inf {
-}
-.winner-desk__item {
+.winner-desk__title-head {
+  
 }

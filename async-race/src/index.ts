@@ -20,6 +20,7 @@ import './scripts/clearUpdateGarage'
 import './scripts/localStorage'
 import './scripts/restartServer'
 import './scripts/switchArenaWinners'
+import './scripts/startStopShip'
 
 
 

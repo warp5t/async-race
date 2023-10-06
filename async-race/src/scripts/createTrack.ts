@@ -3,6 +3,8 @@ import { setListenerSelect } from './selectRemoveListener'
 import startImage from '../images/finish-flag.png'
 import finishImage from '../images/stop.png'
 
+import { setListStartShip, setListStopShip } from './startStopShip'
+
 export const createBtn = document.getElementById('createBtn') as HTMLButtonElement;
 export const createName = document.getElementById('createName') as HTMLInputElement;
 const createColor = document.getElementById('createColor') as HTMLInputElement;
@@ -20,6 +22,8 @@ remove_ID = 'REMOVE-0', select_ID = 'SELECT-0',track_ID = 'track-0';
 }())
 
 setListenerSelect() // for first spase ship
+setListStartShip() // for first space ship
+setListStopShip() // for first space ship
 
 export function updateCountUFO() {
   const GARAGE = document.getElementById('title') as HTMLHeadElement;
@@ -158,6 +162,8 @@ export function createTrack_s() {
       fixHeight()
       addIconStrtFnsh()
       setListenerSelect()
+      setListStartShip()
+      setListStopShip()
       updateCountUFO()
       ammountSpaceCraft--
     }
