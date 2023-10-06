@@ -112,12 +112,24 @@ export async function stpStrtDriveEngine(id: number, status: string) {
   await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
       method: 'PATCH',
     })
-    .then(data => data.json())
-    .then(data => console.log(data.velocity, data.distance, data.success, typeof (data)))
-    .catch((error) => {
-      console.error('An error occurred:', error)
+    .then(response => {
+      if (response.status === 500) {
+        console.log('500 response received');
+        // Handle the 500 response here
+      } else {
+        return response.json();
+      }
     })
+    .then(data => {
+      if (data) {
+        console.log(data.velocity, '- velocity', data.distance, '- distance', data.success, '- success', data);
+      }
+    })
+    .catch((error) => {
+      console.error('An error occurred:', error);
+    });
 }
+
 
 export async function getWinners() {
   await fetch(`http://127.0.0.1:3000/winners`, {
@@ -230,3 +242,30 @@ export async function updateWinner(id: number, wins: number, time: number) {
       console.error('An error occurred:', error)
     })
 }
+
+
+// interface Response {
+//   velocity: 
+// }
+
+// export async function stpStrtDriveEngine(id: number, status: string) {
+//   await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
+//       method: 'PATCH',
+//     })
+//     // .then(data => data.json())
+//     .then(response => {
+//       if (response.status === 500) {
+//         console.log('500 response received');
+//         // Handle the 500 response here
+//       } else if (response.status === 200) {
+//         console.log(response.velocity)
+//       }
+//       else {
+//         return response.json();
+//       }
+//       // .then(data => console.log(data.velocity, '- velocity', data.distance, '- distance', data.success, '- success' , data))
+//     })
+//     .catch((error) => {
+//       console.error('An error occurred:', error)
+//     })
+// }

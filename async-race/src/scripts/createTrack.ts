@@ -36,7 +36,7 @@ nameID = 'UFO-' + counter_ID;
 svg_ID = 'svg-' + counter_ID;
 select_ID = 'SELECT-' + counter_ID;
 remove_ID = 'REMOVE-' + counter_ID;
-start_ID = 'SART-' + counter_ID;
+start_ID = 'START-' + counter_ID;
 stop_ID = 'STOP-' + counter_ID;
 track_ID = 'track-' + (counter_ID);
 counter_ID++

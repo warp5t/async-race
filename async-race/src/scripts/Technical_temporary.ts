@@ -68,11 +68,12 @@ techicalBtn_3.innerText = 'delete\nSheep';
 techicalBtn_4.addEventListener('click', () => {
   if(!switcher) {
     stpStrtDriveEngine(3,'started')
-    stpStrtDriveEngine(3,'drive');
+    stpStrtDriveEngine(3,'drive')
     switcher = true;
   } else {
     stpStrtDriveEngine(3,'stopped')
     switcher = false;
+    console.log('stop')
   }
 })
 techicalBtn_4.innerText = 'stpStrt\nDriveEngine';
