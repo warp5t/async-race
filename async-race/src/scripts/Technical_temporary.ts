@@ -12,6 +12,7 @@ getWinners, getWinner, createWinner, deleteWinner, updateWinner } from "./server
 import { loadStorage_fn, saveStorage_fn } from "./localStorage";
 
 import { switchArenaWinn } from "./switchArenaWinners";
+import { setListStartShip, setListStopShip } from "./startStopShip"; 
 
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
 const  techicalBtn = document.createElement('button') as HTMLButtonElement;
@@ -30,10 +31,11 @@ const  techicalBtn_11 = document.createElement('button') as HTMLButtonElement;
 const  techicalBtn_12 = document.createElement('button') as HTMLButtonElement;
 const  techicalBtn_13 = document.createElement('button') as HTMLButtonElement;
 const  techicalBtn_14 = document.createElement('button') as HTMLButtonElement;
+const  techicalBtn_15 = document.createElement('button') as HTMLButtonElement;
 const arrTechBtn = [techicalBtn, techicalBtn_0, techicalBtn_1, techicalBtn_2,
 techicalBtn_3, techicalBtn_4, techicalBtn_5, techicalBtn_6, techicalBtn_7,
 techicalBtn_8,techicalBtn_9, techicalBtn_10, techicalBtn_11, techicalBtn_12, 
-techicalBtn_13, techicalBtn_14];
+techicalBtn_13, techicalBtn_14, techicalBtn_15];
 
 arrTechBtn.forEach(element => {
   element.style.height = '70px';
@@ -131,5 +133,15 @@ techicalBtn_12.addEventListener('click', () => {
 });
   
  techicalBtn_14.innerText = 'reset\nCount\nWinners';
+
+ techicalBtn_15.addEventListener('click', () => {
+  console.log('techicalBtn_15');
+  // const ammountShip = await getShips();
+  // console.log(ammountShip, ' - length')
+  setListStartShip()
+  setListStopShip()
+});
+  
+ techicalBtn_15.innerText = 'set Start\nStop';
 }
 Technical_temporary_s()
