@@ -45,9 +45,6 @@ export async function shipSpliceNameManipulate(term?: string, id?: number) {
        const index = spliceName.indexOf(data[id - 1].name)
        spliceName.splice(index,1)
       }
-      // shipsList = data
-      // console.log(data[0].id)
-      // console.log(data)
     })
     .catch(error => console.error(error))
 }

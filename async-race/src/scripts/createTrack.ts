@@ -4,6 +4,7 @@ import startImage from '../images/finish-flag.png'
 import finishImage from '../images/stop.png'
 
 import { setListStartShip, setListStopShip } from './startStopShip'
+import { wrapSvgCollect } from './animation'
 
 export const createBtn = document.getElementById('createBtn') as HTMLButtonElement;
 export const createName = document.getElementById('createName') as HTMLInputElement;
@@ -164,6 +165,7 @@ export function createTrack_s() {
       setListenerSelect()
       setListStartShip()
       setListStopShip()
+      wrapSvgCollect()
       updateCountUFO()
       ammountSpaceCraft--
     }
