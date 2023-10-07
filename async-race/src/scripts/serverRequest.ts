@@ -27,8 +27,27 @@ export async function getShips() {
   await fetch('http://127.0.0.1:3000/garage')
     .then(data => data.json())
     .then(data => {
+      console.log(data, ' - spaceShips')
+    })
+    .catch(error => console.error(error))
+}
+import { spliceName } from './randomize';
+export async function shipSpliceNameManipulate(term?: string, id?: number) {
+  await fetch('http://127.0.0.1:3000/garage')
+    .then(data => data.json())
+    .then(data => {
+      console.log(data, ' - spaceShips')
+      if(term === 'length') {
+        console.log(data.length)
+        return data.length
+      }
+      if(id) {
+       const index = spliceName.indexOf(data[id - 1].name)
+       spliceName.splice(index,1)
+      }
       // shipsList = data
-      console.log(data)
+      // console.log(data[0].id)
+      // console.log(data)
     })
     .catch(error => console.error(error))
 }
@@ -109,7 +128,6 @@ export async function deleteShip(id: number) {
 }
 
 export async function stpStrtDriveEngine(id: number, status: string) {
-  console.log(id, typeof(id))
   await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
       method: 'PATCH',
     })

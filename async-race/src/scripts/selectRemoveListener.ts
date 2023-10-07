@@ -3,8 +3,10 @@ import {select_ID,remove_ID} from './createTrack'
 import { fixHeight } from './fixHeight'
 import { updateCountUFO } from './createTrack';
 import { reassigneCountUFO } from './createTrack';
-import { deleteShip, deleteWinner } from './serverRequest';
+import { deleteShip, deleteWinner} from './serverRequest';
+import { shipSpliceNameManipulate } from './serverRequest';
 export let ammountPages_listener: number
+
 
 export function setListenerSelect() {
   const selectBtn = document.getElementById(`${select_ID}`) as HTMLButtonElement;
@@ -28,5 +30,7 @@ export function setListenerSelect() {
     reassigneCountUFO()
     updateCountUFO()
     fixHeight()
+    shipSpliceNameManipulate('', Number(pointUnit))
+      
   })
 }

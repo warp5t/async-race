@@ -21,14 +21,14 @@ export const spliceName: Array<string> = [];
   }
 }
 
-export function wrapRand() {
-  let counter = 100;
-  while(counter > 0) {
-    randomName()
-    counter--
-  }
-}
-wrapRand()
-wrapRand()
+// export function wrapRand() {
+//   let counter = 100;
+//   while(counter > 0) {
+//     randomName()
+//     counter--
+//   }
+// }
+// wrapRand()
+// wrapRand()
 
 
