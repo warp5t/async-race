@@ -1,15 +1,3 @@
-// import { fixHeight } from "./fixHeight";
-// import { countUFO } from "./createTrack";
-// import { lastPage } from "./switchPages";
-// import { ammountPages } from "./createTrack";
-// import { countPages } from "./switchPages";
-// import { remainUFO } from "./createTrack";
-
-import {
-  resetWinners,
-  resetCount
-} from "./serverRequest";
-
 import {
   updateShip,
   getShips,
@@ -35,6 +23,8 @@ import {
   spliceName
 } from "./randomize";
 
+// import { arrWrapSvg } from "./animation";
+
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
 const techicalBtn = document.createElement('button') as HTMLButtonElement;
 const techicalBtn_0 = document.createElement('button') as HTMLButtonElement;
@@ -53,10 +43,12 @@ const techicalBtn_12 = document.createElement('button') as HTMLButtonElement;
 const techicalBtn_13 = document.createElement('button') as HTMLButtonElement;
 const techicalBtn_14 = document.createElement('button') as HTMLButtonElement;
 const techicalBtn_15 = document.createElement('button') as HTMLButtonElement;
+const techicalBtn_16 = document.createElement('button') as HTMLButtonElement;
+const techicalBtn_17 = document.createElement('button') as HTMLButtonElement;
 const arrTechBtn = [techicalBtn, techicalBtn_0, techicalBtn_1, techicalBtn_2,
   techicalBtn_3, techicalBtn_4, techicalBtn_5, techicalBtn_6, techicalBtn_7,
   techicalBtn_8, techicalBtn_9, techicalBtn_10, techicalBtn_11, techicalBtn_12,
-  techicalBtn_13, techicalBtn_14, techicalBtn_15
+  techicalBtn_13, techicalBtn_14, techicalBtn_15, techicalBtn_16, techicalBtn_17
 ];
 
 arrTechBtn.forEach(element => {
@@ -148,10 +140,7 @@ export function Technical_temporary_s() {
 
   techicalBtn_14.addEventListener('click', () => {
     console.log('techicalBtn_14');
-    // const ammountShip = await getShips();
-    // console.log(ammountShip, ' - length')
-    resetCount()
-    resetWinners()
+    // const wrapImgComp
   });
 
   techicalBtn_14.innerText = 'reset\nCount\nWinners';
@@ -162,5 +151,24 @@ export function Technical_temporary_s() {
   });
 
   techicalBtn_15.innerText = 'spliceName';
+
+// let anim: NodeJS.Timeout;
+//   techicalBtn_16.addEventListener('click', () => {
+//     console.log('techicalBtn_16');
+//       anim = setInterval(() => {
+//       const leftPx = parseInt(window.getComputedStyle(arrWrapSvg[0],null).paddingLeft);
+//       arrWrapSvg[0].style.paddingLeft = (leftPx + 1) + 'px';
+//     },60)
+
+//   });
+
+//   techicalBtn_16.innerText = 'animation';
+
+//   techicalBtn_17.addEventListener('click', () => {
+//     console.log('techicalBtn_17');
+//     clearInterval(anim)
+//   });
+
+//   techicalBtn_17.innerText = 'stop\nAnimation';
 }
 Technical_temporary_s()

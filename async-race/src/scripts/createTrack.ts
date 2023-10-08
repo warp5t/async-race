@@ -25,6 +25,7 @@ remove_ID = 'REMOVE-0', select_ID = 'SELECT-0',track_ID = 'track-0';
 setListenerSelect() // for first spase ship
 setListStartShip() // for first space ship
 setListStopShip() // for first space ship
+wrapSvgCollect() // for first space ship
 
 export function updateCountUFO() {
   const GARAGE = document.getElementById('title') as HTMLHeadElement;
