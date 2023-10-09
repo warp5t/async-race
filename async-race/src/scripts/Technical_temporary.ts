@@ -23,7 +23,7 @@ import {
   spliceName
 } from "./randomize";
 
-// import { arrWrapSvg } from "./animation";
+import { arrWrapSvg } from "./animation";
 
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
 const techicalBtn = document.createElement('button') as HTMLButtonElement;
@@ -152,23 +152,23 @@ export function Technical_temporary_s() {
 
   techicalBtn_15.innerText = 'spliceName';
 
-// let anim: NodeJS.Timeout;
-//   techicalBtn_16.addEventListener('click', () => {
-//     console.log('techicalBtn_16');
-//       anim = setInterval(() => {
-//       const leftPx = parseInt(window.getComputedStyle(arrWrapSvg[0],null).paddingLeft);
-//       arrWrapSvg[0].style.paddingLeft = (leftPx + 1) + 'px';
-//     },60)
+let anim: NodeJS.Timeout;
+  techicalBtn_16.addEventListener('click', () => {
+    console.log('techicalBtn_16');
+      anim = setInterval(() => {
+      const leftPx = parseInt(window.getComputedStyle(arrWrapSvg[0],null).paddingLeft);
+      arrWrapSvg[0].style.paddingLeft = (leftPx + 1) + 'px';
+    },60)
 
-//   });
+  });
 
-//   techicalBtn_16.innerText = 'animation';
+  techicalBtn_16.innerText = 'animation';
 
-//   techicalBtn_17.addEventListener('click', () => {
-//     console.log('techicalBtn_17');
-//     clearInterval(anim)
-//   });
+  techicalBtn_17.addEventListener('click', () => {
+    console.log('techicalBtn_17');
+    clearInterval(anim)
+  });
 
-//   techicalBtn_17.innerText = 'stop\nAnimation';
+  techicalBtn_17.innerText = 'stop\nAnimation';
 }
 Technical_temporary_s()
