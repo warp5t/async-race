@@ -13,7 +13,7 @@ export const subwrapFieldRace = document.querySelector('.subwrap-field-race') as
 
 
 export let ammountPages = 0, remainUFO = 0;
-let  counter_ID = 1, nameUFO = '';
+let  counter_ID = 2, nameUFO = '';
 export let nameID = 'UFO-', svg_ID = 'svg-0',
 countUFO = 1, start_ID = 'START-1', stop_ID = 'STOP-1',
 remove_ID = 'REMOVE-0', select_ID = 'SELECT-0',track_ID = 'track-0';
