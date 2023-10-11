@@ -156,17 +156,18 @@ let anim: NodeJS.Timeout;
   techicalBtn_16.addEventListener('click', () => {
     console.log('techicalBtn_16');
     const earth = document.querySelector('.wrap-image-earth') as HTMLDivElement;
-    const wrapCommon = document.querySelector('.wrap') as HTMLDivElement;
-    console.log(earth.offsetWidth, " - wrapImage.offsetWidth");
-    console.log(earth.getBoundingClientRect().x, ' - earth');
-    console.log(window.getComputedStyle(arrWrapSvg[0], null).left, ' - window.getComputedStyle(arrWrapSvg[0], null).left');    
-    console.log(wrapCommon.offsetWidth, " - wrapCommon.offsetWidth");
+    // const wrapCommon = document.querySelector('.wrap') as HTMLDivElement;
+    // console.log(earth.offsetWidth, " - wrapImage.offsetWidth");
+    // console.log(earth.getBoundingClientRect().x, ' - earth');
+    // console.log(window.getComputedStyle(arrWrapSvg[0], null).left, ' - window.getComputedStyle(arrWrapSvg[0], null).left');    
+    // console.log(wrapCommon.offsetWidth, " - wrapCommon.offsetWidth");
     
     anim = setInterval(() => {
-      const leftPxShip = parseInt(window.getComputedStyle(arrWrapSvg[0],null).left);
-      arrWrapSvg[0].style.left = (leftPxShip + 40) + 'px';
+      const leftPx = parseInt(window.getComputedStyle(arrWrapSvg[0],null).left);
+      arrWrapSvg[0].style.left = (leftPx + 90) + 'px';
       const coordEarth = Math.trunc(earth.getBoundingClientRect().x);
       const coordShip = parseInt(window.getComputedStyle(arrWrapSvg[0], null).left);
+      console.log(coordShip);
       if(coordEarth <= coordShip + 55) {
         clearInterval(anim)
       }
