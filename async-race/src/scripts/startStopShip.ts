@@ -49,7 +49,7 @@ export function setListStopShip() {
   
   stopBtn.addEventListener('click', () => {
     stpStrtDriveEngine(id, 'stopped');
-    clearInterval(arrShipAnim[id-1]);
+    // clearInterval(arrShipAnim[id-1]);
   });
 }
 

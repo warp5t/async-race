@@ -181,32 +181,38 @@ export async function deleteShip(id: number) {
 // }
 
 import { arrShipAnim } from './startStopShip';
-
 export async function stpStrtDriveEngine(
-  id: number,
-  status: string,
-  fnAnim?: (velocity: number) => void,
-) {
-  await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
-    method: 'PATCH',
-  })
+  id: number, status: string, fnAnim?: (velocity: number) => void) {
+    let movePermiss = false;
+    if (status === 'start' || status === 'drive') {
+      console.log(`Cannot run ID ${id} because its status is ${status}`);
+      return;
+    }
+    await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
+      method: 'PATCH',
+    })
     .then((response) => {
       if (status === 'started' && response.status === 200) {
+        movePermiss = true;
         return response.json();
       } else if (status === 'drive' && response.status === 500) {
+        clearInterval(arrShipAnim[id - 1])
+        movePermiss = false;
         return response.text();
+      } else if (status === 'drive' && response.status === 429) {
+        movePermiss = false;
+        return response.json;
+      } else if (status === 'stopped' && response.status === 200) {
+        clearInterval(arrShipAnim[id - 1])
+        movePermiss = false;
+        return response.json;
       } else {
         return response.json();
       }
     })
     .then((data) => {
-      if (status === 'started' && data) {
-        console.log(
-          data.velocity, '- velocity',
-          data.distance, '- distance',
-          data.success, '- success',
-          data
-        );
+      if (status === 'started' && data && movePermiss) {
+        console.log(data.velocity, '- velocity', data.distance, '- distance',data.success, '- success',data);
         if (fnAnim) {
           const generalWrap = document.querySelector('.wrap') as HTMLDivElement;
           const widthTrack = generalWrap.offsetWidth;
@@ -218,10 +224,6 @@ export async function stpStrtDriveEngine(
       if (status === 'drive' && data.success === true) {
         console.log('SUCCESS drive');
       } 
-      if (status === 'drive' && data === 'Car has been stopped suddenly. It\'s engine was broken down.')  {
-        console.log('engine stopped');
-        clearInterval(arrShipAnim[id - 1]);
-      }
     })
     .catch((error) => {
       console.error('An error occurred:', error);
