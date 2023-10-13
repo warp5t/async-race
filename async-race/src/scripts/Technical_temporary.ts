@@ -23,7 +23,7 @@ import {
   spliceName
 } from "./randomize";
 
-import { arrWrapSvg } from "./animation";
+import { arrShipAnim } from "./startStopShip";
 
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
 const techicalBtn = document.createElement('button') as HTMLButtonElement;
@@ -140,7 +140,6 @@ export function Technical_temporary_s() {
 
   techicalBtn_14.addEventListener('click', () => {
     console.log('techicalBtn_14');
-    // const wrapImgComp
   });
 
   techicalBtn_14.innerText = 'reset\nCount\nWinners';
@@ -152,38 +151,18 @@ export function Technical_temporary_s() {
 
   techicalBtn_15.innerText = 'spliceName';
 
-let anim: NodeJS.Timeout;
   techicalBtn_16.addEventListener('click', () => {
     console.log('techicalBtn_16');
-    const earth = document.querySelector('.wrap-image-earth') as HTMLDivElement;
-    // const wrapCommon = document.querySelector('.wrap') as HTMLDivElement;
-    // console.log(earth.offsetWidth, " - wrapImage.offsetWidth");
-    // console.log(earth.getBoundingClientRect().x, ' - earth');
-    // console.log(window.getComputedStyle(arrWrapSvg[0], null).left, ' - window.getComputedStyle(arrWrapSvg[0], null).left');    
-    // console.log(wrapCommon.offsetWidth, " - wrapCommon.offsetWidth");
-    
-    anim = setInterval(() => {
-      const leftPx = parseInt(window.getComputedStyle(arrWrapSvg[0],null).left);
-      arrWrapSvg[0].style.left = (leftPx + 90) + 'px';
-      const coordEarth = Math.trunc(earth.getBoundingClientRect().x);
-      const coordShip = parseInt(window.getComputedStyle(arrWrapSvg[0], null).left);
-      console.log(coordShip);
-      if(coordEarth <= coordShip + 55) {
-        clearInterval(anim)
-      }
-    },60)
-
+    console.log(wrap.offsetWidth, ' - wrap.offsetWidth');
   });
 
-  techicalBtn_16.innerText = 'animation';
+  techicalBtn_16.innerText = 'width\ntrack';
 
   techicalBtn_17.addEventListener('click', () => {
     console.log('techicalBtn_17');
-    console.log(window.getComputedStyle(arrWrapSvg[0], null).left, ' - here ship stoped');
-
-    clearInterval(anim)
+    clearInterval(arrShipAnim[2])
   });
 
-  techicalBtn_17.innerText = 'stop\nAnimation';
+  techicalBtn_17.innerText = 'stop\nAnimation 2';
 }
 Technical_temporary_s()

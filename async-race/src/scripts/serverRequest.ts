@@ -31,19 +31,21 @@ export async function getShips() {
     })
     .catch(error => console.error(error))
 }
-import { spliceName } from './randomize';
-export async function shipSpliceNameManipulate(term?: string, id?: number) {
+import {
+  spliceName
+} from './randomize';
+export async function shipSpliceNameManipulate(term ? : string, id ? : number) {
   await fetch('http://127.0.0.1:3000/garage')
     .then(data => data.json())
     .then(data => {
       console.log(data, ' - spaceShips')
-      if(term === 'length') {
+      if (term === 'length') {
         console.log(data.length)
         return data.length
       }
-      if(id) {
-       const index = spliceName.indexOf(data[id - 1].name)
-       spliceName.splice(index,1)
+      if (id) {
+        const index = spliceName.indexOf(data[id - 1].name)
+        spliceName.splice(index, 1)
       }
     })
     .catch(error => console.error(error))
@@ -124,27 +126,110 @@ export async function deleteShip(id: number) {
     })
 }
 
-export async function stpStrtDriveEngine(id: number, status: string) {
+
+// import {arrShipAnim} from './startStopShip'
+
+// export async function stpStrtDriveEngine(
+//   id: number, status: string,
+//   fnAnim ? : (velocity: number) => void,
+//   // arrShip ? : (id: number) => Array < NodeJS.Timeout > | undefined
+// ) {
+//   await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
+//       method: 'PATCH',
+//     })
+//     .then((response) => {
+//       if (status === 'started' && response.status === 200) {
+//         return response.json();
+//       } else if (status === 'drive' && response.status === 500) {
+//         return response.json();
+//       } else {
+//         return response.json();
+//       }
+//     })
+//     .then((data) => {
+//       if (status === 'started' && data) {
+//         console.log(
+//           data.velocity, '- velocity',
+//           data.distance, '- distance',
+//           data.success, '- success',
+//           data
+//         );
+//         if (fnAnim) {
+//           const generalWrap = document.querySelector('.wrap') as HTMLDivElement;
+//           const widthTrack = generalWrap.offsetWidth;
+//           const vel = Math.trunc(((widthTrack * data.velocity) / data.distance) * 10);
+//           console.log(vel, ' - vel');
+//           fnAnim(vel);
+//         }
+//       }
+//       if (status === 'drive' && data.success === true) {
+//         console.log('SUCCESS drive');
+//       } else if (status === 'drive' && data.success === !true) {
+//         console.log('engine stopped');
+//         // if (arrShip) {
+//         //   const intervals = arrShip(id);
+//         //   if (intervals) {
+//         //     intervals.forEach((interval) => clearInterval(interval));
+//         //   }
+//         // }
+//         clearInterval(arrShipAnim[id-1])
+//       }
+//     })
+//     .catch((error) => {
+//       console.error('An error occurred:', error);
+//     });
+// }
+
+import { arrShipAnim } from './startStopShip';
+
+export async function stpStrtDriveEngine(
+  id: number,
+  status: string,
+  fnAnim?: (velocity: number) => void,
+) {
   await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
-      method: 'PATCH',
-    })
-    .then(response => {
-      if (response.status === 500) {
-        console.log('500 response received');
-        // Handle the 500 response here
+    method: 'PATCH',
+  })
+    .then((response) => {
+      if (status === 'started' && response.status === 200) {
+        return response.json();
+      } else if (status === 'drive' && response.status === 500) {
+        return response.text();
       } else {
         return response.json();
       }
     })
-    .then(data => {
-      if (data) {
-        console.log(data.velocity, '- velocity', data.distance, '- distance', data.success, '- success', data);
+    .then((data) => {
+      if (status === 'started' && data) {
+        console.log(
+          data.velocity, '- velocity',
+          data.distance, '- distance',
+          data.success, '- success',
+          data
+        );
+        if (fnAnim) {
+          const generalWrap = document.querySelector('.wrap') as HTMLDivElement;
+          const widthTrack = generalWrap.offsetWidth;
+          const vel = Math.trunc(((widthTrack * data.velocity) / data.distance) * 10);
+          console.log(vel, ' - vel');
+          fnAnim(vel);
+        }
+      }
+      if (status === 'drive' && data.success === true) {
+        console.log('SUCCESS drive');
+      } 
+      if (status === 'drive' && data === 'Car has been stopped suddenly. It\'s engine was broken down.')  {
+        console.log('engine stopped');
+        clearInterval(arrShipAnim[id - 1]);
       }
     })
     .catch((error) => {
       console.error('An error occurred:', error);
     });
 }
+
+
+
 
 
 export async function getWinners() {
@@ -258,5 +343,3 @@ export async function updateWinner(id: number, wins: number, time: number) {
       console.error('An error occurred:', error)
     })
 }
-
-
