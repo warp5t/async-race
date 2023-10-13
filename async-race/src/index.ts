@@ -22,6 +22,7 @@ import './scripts/restartServer'
 import './scripts/switchArenaWinners'
 import './scripts/startStopShip'
 import './scripts/animation'
+import './scripts/raceMode'
 
 
 
