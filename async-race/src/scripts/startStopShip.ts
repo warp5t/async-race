@@ -6,9 +6,8 @@ import {
   stpStrtDriveEngine
 } from "./serverRequest";
 import { arrWrapSvg } from "./animation";
+import { arrShipBool } from "./serverRequest";
 
-// export const arrShipAnim: Array<NodeJS.Timeout> = [];
-// export const arrShipAnim: NodeJS.Timeout[] = [];
 export const arrShipAnim: Array<NodeJS.Timeout> = [];
 
 export function setListStartShip() {
@@ -25,6 +24,7 @@ export function setListStartShip() {
       const coordShip = parseInt(window.getComputedStyle(arrWrapSvg[id - 1], null).left);
       if (coordEarth <= coordShip + 50) {
         clearInterval(anim);
+        arrShipBool[id -1] = true;
       }
     }, 32);
     arrShipAnim[id - 1] = anim;
@@ -34,10 +34,11 @@ export function setListStartShip() {
 
   startBtn.addEventListener('click', () => {
     console.log(id, ' id startStopShip');
-
+    if(arrShipBool[id - 1] === undefined || arrShipBool[id - 1] === true) {
     stpStrtDriveEngine(id, 'started', shipAnimating);
     stpStrtDriveEngine(id, 'drive');
     // shipAnimating;
+    }
   });
 }
 
