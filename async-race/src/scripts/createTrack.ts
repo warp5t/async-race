@@ -5,6 +5,7 @@ import finishImage from '../images/stop.png'
 
 import { setListStartShip, setListStopShip } from './startStopShip'
 import { wrapSvgCollect } from './animation'
+import { updateShip } from './serverRequest'
 
 export const createBtn = document.getElementById('createBtn') as HTMLButtonElement;
 export const createName = document.getElementById('createName') as HTMLInputElement;
@@ -158,6 +159,7 @@ export function createTrack_s() {
       set_ID()
       nameUFO = spliceName[spliceName.length -1];
       createShip(nameUFO, colorShip)
+      updateShip(countUFO,nameUFO,colorShip)
       subwrapFieldRace.prepend(trackCreator())
       const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
       svgID_name.setAttribute('fill', colorShip);
