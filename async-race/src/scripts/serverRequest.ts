@@ -134,16 +134,13 @@ export const arrShipBool: Array<boolean> = [];
 export async function stpStrtDriveEngine(
   id: number, status: string, fnAnim?: (velocity: number) => void
   ) {
-  
-  // let movePermiss = false;
-  
+   console.log(id, ' - id 137');
+   
   await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
     method: 'PATCH',
   })
   .then((response) => {
-    if (status === 'started' && response.status === 200) {
-      // console.log(id, ' - id');
-      
+    if (status === 'started' && response.status === 200) {   
       arrShipBool[id - 1] = false;
       return response.json();
     } else if (status === 'drive' && response.status === 500) {

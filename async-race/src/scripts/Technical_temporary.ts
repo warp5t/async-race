@@ -23,6 +23,8 @@ import {
   spliceName
 } from "./randomize";
 
+import { arrShipBool } from "./serverRequest";
+
 import { arrShipAnim } from "./startStopShip";
 
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
@@ -153,10 +155,14 @@ export function Technical_temporary_s() {
 
   techicalBtn_16.addEventListener('click', () => {
     console.log('techicalBtn_16');
-    console.log(wrap.offsetWidth, ' - wrap.offsetWidth');
+    console.log(arrShipBool);
+    arrShipBool.forEach((currentValue, index) => {
+      console.log(`id.[${index + 1}] - ${currentValue}`);  
+  });
+    
   });
 
-  techicalBtn_16.innerText = 'width\ntrack';
+  techicalBtn_16.innerText = 'arrShipBool';
 
   techicalBtn_17.addEventListener('click', () => {
     console.log('techicalBtn_17');

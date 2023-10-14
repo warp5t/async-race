@@ -24,7 +24,7 @@ raceBtn.addEventListener('click', () => {
 				const coordShip = parseInt(window.getComputedStyle(arrWrapSvg[id - 1], null).left);
 				if (coordEarth <= coordShip + 50) {
 					clearInterval(anim);
-					arrShipBool[id] = true;
+					arrShipBool[id -1] = true;
 				}
 			}, 32);
 			arrShipAnim[id] = anim;
@@ -33,7 +33,7 @@ raceBtn.addEventListener('click', () => {
 		arrShipAnim.push(arrShipAnim[id - 1]); // Add a placeholder for the ship animation
 	
 			console.log(id, ' id startStopShip');
-			if(arrShipBool[id] === undefined || arrShipBool[id] === true) {
+			if(arrShipBool[id - 1] === undefined || arrShipBool[id - 1] === true) {
 			stpStrtDriveEngine(id, 'started', shipAnimating);
 			stpStrtDriveEngine(id, 'drive');
 			}
