@@ -158,7 +158,7 @@ export function createTrack_s() {
       set_ID()
       nameUFO = spliceName[spliceName.length -1];
       createShip(nameUFO, colorShip)
-      subwrapFieldRace.append(trackCreator())
+      subwrapFieldRace.prepend(trackCreator())
       const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
       svgID_name.setAttribute('fill', colorShip);
       fixHeight()

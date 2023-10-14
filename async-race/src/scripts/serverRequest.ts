@@ -192,6 +192,8 @@ export async function stpStrtDriveEngine(
   })
   .then((response) => {
     if (status === 'started' && response.status === 200) {
+      // console.log(id, ' - id');
+      
       arrShipBool[id - 1] = false;
       return response.json();
     } else if (status === 'drive' && response.status === 500) {
@@ -210,12 +212,12 @@ export async function stpStrtDriveEngine(
   })
   .then((data) => {
     if (status === 'started' && data) {
-      console.log(data.velocity, '- velocity', data.distance, '- distance', data.success, '- success',data);
+      // console.log(data.velocity, '- velocity', data.distance, '- distance', data.success, '- success',data);
       if (fnAnim) {
         const generalWrap = document.querySelector('.wrap') as HTMLDivElement;
         const widthTrack = generalWrap.offsetWidth;
         const vel = Math.trunc(((widthTrack * data.velocity) / data.distance) * 10);
-        console.log(vel, ' - vel');
+        // console.log(vel, ' - vel');
         fnAnim(vel);
       }
     }
