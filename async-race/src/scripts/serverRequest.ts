@@ -129,13 +129,13 @@ export async function deleteShip(id: number) {
 import { arrShipAnim } from './startStopShip';
 import { arrWrapSvg } from './animation'
 
+
 export const arrShipBool: Array<boolean> = [];
+export const arrTimeStart: Array<number> = [];
 
 export async function stpStrtDriveEngine(
-  id: number, status: string, fnAnim?: (velocity: number) => void
-  ) {
-   console.log(id, ' - id 137');
-   
+  id: number, status: string, fnAnim?: (velocity: number) => void) {
+   arrTimeStart[id -1] = Date.now();
   await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
     method: 'PATCH',
   })
@@ -153,6 +153,7 @@ export async function stpStrtDriveEngine(
     } else if (status === 'stopped' && response.status === 200) {
       clearInterval(arrShipAnim[id - 1])
       arrShipBool[id - 1] = true;
+     
       arrWrapSvg[id -1].style.left = '0px';
       return response.json;
     }

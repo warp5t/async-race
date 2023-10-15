@@ -19,13 +19,11 @@ import {
 import {
   switchArenaWinn
 } from "./switchArenaWinners";
-import {
-  spliceName
-} from "./randomize";
 
 import { arrShipBool } from "./serverRequest";
+import { arrTimeDifference } from "./raceMode";
 
-import { arrShipAnim } from "./startStopShip";
+
 
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
 const techicalBtn = document.createElement('button') as HTMLButtonElement;
@@ -148,10 +146,9 @@ export function Technical_temporary_s() {
 
   techicalBtn_15.addEventListener('click', () => {
     console.log('techicalBtn_15');
-    console.log(spliceName)
   });
 
-  techicalBtn_15.innerText = 'spliceName';
+  techicalBtn_15.innerText = 'additCountShip';
 
   techicalBtn_16.addEventListener('click', () => {
     console.log('techicalBtn_16');
@@ -165,10 +162,10 @@ export function Technical_temporary_s() {
   techicalBtn_16.innerText = 'arrShipBool';
 
   techicalBtn_17.addEventListener('click', () => {
-    console.log('techicalBtn_17');
-    clearInterval(arrShipAnim[2])
+    console.log(arrTimeDifference, ' - arrTimeDifference');
+    
   });
 
-  techicalBtn_17.innerText = 'stop\nAnimation 2';
+  techicalBtn_17.innerText = 'timeShip';
 }
 Technical_temporary_s()
