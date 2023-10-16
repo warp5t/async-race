@@ -6,6 +6,10 @@ export const body = document.getElementById('body') as HTMLBodyElement;
 
 body.innerHTML = `
 <div class="wrap">
+<div class="container-mode">
+  <button class="container-mode__btn" id="toShipBtn">TO SHIPS</button>
+  <button class="container-mode__btn" id="toWinnerBtn">TO WINNERS</button>
+</div>
 <div class="winners-desk">
   <div class="winner-desk__wrap-head">
     <div class="winner-desk__head">
@@ -26,10 +30,6 @@ body.innerHTML = `
   </div>
 </div>
 <div class="race-arena">
-<div class="container-mode">
-  <button class="container-mode__btn" id="toShipBtn">TO SHIPS</button>
-  <button class="container-mode__btn" id="toWinnerBtn">TO WINNERS</button>
-</div>
 <div class="container-preparate">
   <div class="wrap-create">
     <input class="wrap-create__input" id="createName" type="text">
