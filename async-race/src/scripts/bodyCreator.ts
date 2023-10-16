@@ -27,7 +27,7 @@ body.innerHTML = `
 </div>
 <div class="race-arena">
 <div class="container-mode">
-  <button class="container-mode__btn" id="toBeatleBtn">TO BEATLES</button>
+  <button class="container-mode__btn" id="toShipBtn">TO SHIPS</button>
   <button class="container-mode__btn" id="toWinnerBtn">TO WINNERS</button>
 </div>
 <div class="container-preparate">
