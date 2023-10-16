@@ -201,7 +201,8 @@ export async function stpStrtDriveEngine(
       arrShipBool[id - 1] = false;
     } else if (status === 'drive' && response.status === 429) {
       arrShipBool[id - 1] = false;
-    } else if (status === 'stopped' && response.status === 200) {
+    } else if (status === 'stopped' && response.status === 200) { 
+      console.log(id - 1);
       clearInterval(arrShipAnim[id - 1]);
       arrShipBool[id - 1] = true;
       arrWrapSvg[id - 1].style.left = '0px';

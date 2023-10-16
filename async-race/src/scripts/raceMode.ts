@@ -34,7 +34,6 @@ raceBtn.addEventListener('click', () => {
 
 	const initCount = (((countPages + 1) * 7) - 7) + 1;
 	for (let id = initCount; id <= initCount + 6; id++) {
-
 		const shipAnimating = function (velocity: number): void {
 			const earth = document.querySelector('.wrap-image-earth') as HTMLDivElement;
 			const anim: NodeJS.Timeout = setInterval(() => {
@@ -53,12 +52,9 @@ raceBtn.addEventListener('click', () => {
 						(async () => {
 							const winner: Winner = await getWinner(id);
 							if (winner.persistance === false) {
-								console.log('--------------------------===============================----------------------------===========================--------------------====================');
-
 								createWinner(id, 1, arrTimeDifference[id - 1])
 							} else {
 								if(arrTimeDifference[id] >= prevTime) {
-
 									updateWinner(id, winner.wins+1, prevTime)
 								} else {
 									updateWinner(id,winner.wins+1, arrTimeDifference[id -1])
@@ -70,7 +66,7 @@ raceBtn.addEventListener('click', () => {
 
 				}
 			}, 32);
-			arrShipAnim[id] = anim;
+			arrShipAnim[id - 1] = anim;
 		};
 
 		arrShipAnim.push(arrShipAnim[id - 1]);

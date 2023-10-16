@@ -24,7 +24,7 @@ export function setListStartShip() {
       const coordShip = parseInt(window.getComputedStyle(arrWrapSvg[id - 1], null).left);
       if (coordEarth <= coordShip + 50) {
         clearInterval(anim);
-        arrShipBool[id -1] = true;
+        arrShipBool[id - 1] = true;
       }
     }, 32);
     arrShipAnim[id - 1] = anim;
@@ -34,11 +34,11 @@ export function setListStartShip() {
 
   startBtn.addEventListener('click', () => {
     console.log(id, ' id startStopShip');
-    if(arrShipBool[id - 1] === undefined || arrShipBool[id - 1] === true) {
+    // if(arrShipBool[id - 1] === undefined || arrShipBool[id - 1] === true) {
     stpStrtDriveEngine(id, 'started', shipAnimating);
     stpStrtDriveEngine(id, 'drive');
     // shipAnimating;
-    }
+    // }
   });
 }
 
