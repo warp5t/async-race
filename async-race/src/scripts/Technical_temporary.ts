@@ -25,6 +25,7 @@ import { arrTimeDifference } from "./raceMode";
 
 
 
+
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
 const techicalBtn = document.createElement('button') as HTMLButtonElement;
 const techicalBtn_0 = document.createElement('button') as HTMLButtonElement;
@@ -101,8 +102,10 @@ export function Technical_temporary_s() {
     getWinners()
   })
   techicalBtn_6.innerText = 'get\nWinners';
-  techicalBtn_7.addEventListener('click', () => {
-    getWinner(1)
+  techicalBtn_7.addEventListener('click',async () => {
+    const result = await getWinner(3);
+    console.log(result);
+    
   })
   techicalBtn_7.innerText = 'get\nWinner';
   techicalBtn_8.addEventListener('click', () => {
