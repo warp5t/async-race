@@ -21,8 +21,8 @@ import {
 } from "./switchArenaWinners";
 
 import { arrShipBool } from "./serverRequest";
-import { arrTimeDifference } from "./raceMode";
 
+// import { winnersBtn } from "./winnersTable";
 
 
 
@@ -66,18 +66,39 @@ export function Technical_temporary_s() {
     getShips()
   })
   techicalBtn.innerText = 'get\nSheeps';
+
   techicalBtn_0.addEventListener('click', () => {
-    getShip(1)
+    interface Ship {
+      id: number,
+      color: string,
+      name: string
+    }
+    const winners = getShip(1)
+      .then((data: unknown) => {
+        const shipData = data as Ship[];
+        console.log(shipData);
+        for(const key in shipData) {
+          console.log(shipData[key]);         
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  
+    console.log(winners);
   })
   techicalBtn_0.innerText = 'get\nSheep';
+
   techicalBtn_1.addEventListener('click', () => {
     updateShip(1, 'Rusted Tank', '#ff00ff')
   })
   techicalBtn_1.innerText = 'update\nSheep';
+
   techicalBtn_2.addEventListener('click', () => {
     createShip('Super Furter', '#ff00ff')
   })
   techicalBtn_2.innerText = 'create\nSheep';
+
   techicalBtn_3.addEventListener('click', () => {
     deleteShip(6)
   })
@@ -98,18 +119,46 @@ export function Technical_temporary_s() {
     if (switcher) stpStrtDriveEngine(3, 'drive');
   })
   techicalBtn_5.innerText = 'stpStrt\nDriveEngine\ndrive';
+
   techicalBtn_6.addEventListener('click', () => {
-    getWinners()
-  })
+    interface Ship {
+      id: number,
+      wins: number,
+      time: number
+    }
+    const winners = getWinners('ASC', 'wins')
+      .then((data: unknown) => {
+        const shipData = data as Ship[];
+        console.log(shipData);
+        shipData.forEach((elem: Ship) => {
+          console.log(elem.id, elem.wins, elem.time);
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  
+    console.log(winners);
+  });
+  
+  
+
   techicalBtn_6.innerText = 'get\nWinners';
+
   techicalBtn_7.addEventListener('click',async () => {
     const result = await getWinner(3);
     console.log(result);
     
   })
   techicalBtn_7.innerText = 'get\nWinner';
+
   techicalBtn_8.addEventListener('click', () => {
-    createWinner(3, 1, 20)
+    for (let i = 0; i < 5; i++){
+      const randTime = Math.random()*10
+      const randWins = Math.trunc(Math.random()*10)
+      createWinner(i + 1, randWins, randTime)
+
+    }
   })
   techicalBtn_8.innerText = 'create\nWinner';
   techicalBtn_9.addEventListener('click', () => {
@@ -157,7 +206,7 @@ export function Technical_temporary_s() {
     console.log('techicalBtn_16');
     console.log(arrShipBool);
     arrShipBool.forEach((currentValue, index) => {
-      console.log(`id.[${index + 1}] - ${currentValue}`);  
+      console.log(`id.[${index}] - ${currentValue}`);  
   });
     
   });
@@ -165,10 +214,18 @@ export function Technical_temporary_s() {
   techicalBtn_16.innerText = 'arrShipBool';
 
   techicalBtn_17.addEventListener('click', () => {
-    console.log(arrTimeDifference, ' - arrTimeDifference');
-    
+    // const nodesChild = winnersBtn.childNodes;
+    // while(nodesChild.length > 1) {
+    //     for (let i = 0; i < nodesChild.length; i++) {
+    //      console.log(nodesChild[i].textContent);
+    //       if(nodesChild[i].textContent != 'Wins') {
+    //         nodesChild[i].remove()
+    //       }
+    //   }
+    // }
+
   });
 
-  techicalBtn_17.innerText = 'timeShip';
+  techicalBtn_17.innerText = 'nodesChild';
 }
 Technical_temporary_s()

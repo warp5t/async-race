@@ -52,10 +52,26 @@ export async function shipSpliceNameManipulate(term ? : string, id ? : number) {
 }
 
 export async function getShip(id: number) {
-  await fetch('http://127.0.0.1:3000/garage/' + id)
-    .then(data => data.json())
-    .then(data => console.log(data, typeof (data)))
-    .catch(error => console.error(error))
+  return new Promise((resolve, reject) => {
+     fetch('http://127.0.0.1:3000/garage/' + id)
+    .then(response => response.json())
+      .then((data) => {
+        const ship = {
+          id: data.id,
+          name: data.name,
+          color: data.color
+        };
+        resolve(ship);
+      })
+      .catch((error) => {
+        console.error(error);
+        reject(error);
+      });
+}) 
+
+    // .then(data => data.json())
+    // .then(data => console.log(data, typeof (data)))
+    // .catch(error => console.error(error))
 }
 
 export async function createShip(name: string, color: string) {
@@ -216,14 +232,23 @@ export async function stpStrtDriveEngine(
 }
 
 
-export async function getWinners() {
-  await fetch(`http://127.0.0.1:3000/winners`, {
+export async function getWinners(order?: string, sort?: string) {
+  return new Promise((resolve, reject) => {
+    fetch(`http://127.0.0.1:3000/winners?_order=${order}&_sort=${sort}`, {
       method: 'GET',
     })
-    .then(data => data.json())
-    .then(data => console.log(data, typeof (data)))
-    .catch(error => console.error(error))
+      .then(response => response.json())
+      .then(data => {
+        // console.log(data, typeof data);
+        resolve(data);
+      })
+      .catch(error => {
+        console.error(error);
+        reject(error);
+      });
+  });
 }
+
 
 // export async function getWinner(id: number): Promise<string | void> {
 //   await fetch(`http://127.0.0.1:3000/winners/${id}`, {

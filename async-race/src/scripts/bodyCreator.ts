@@ -12,19 +12,19 @@ body.innerHTML = `
 </div>
 <div class="winners-desk">
   <div class="winner-desk__wrap-head">
-    <div class="winner-desk__head">
+    <div class="winner-desk__head" id="winNumber">
       <div class="winner-desk__title-head">Number</div>
     </div>
-    <div class="winner-desk__head">
+    <div class="winner-desk__head" id="winShip">
       <div class="winner-desk__title-head">Ship</div>
     </div>
-    <div class="winner-desk__head">
+    <div class="winner-desk__head" id="winName">
       <div class="winner-desk__title-head">Name</div>
     </div>
-    <div class="winner-desk__head">
+    <div class="winner-desk__head" id="winWins">
       <div class="winner-desk__title-head">Wins</div>
     </div>
-    <div class="winner-desk__head">
+    <div class="winner-desk__head" id="winTime">
       <div class="winner-desk__title-head">Best time (seconds)</div>
     </div>
   </div>

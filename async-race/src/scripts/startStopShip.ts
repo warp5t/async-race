@@ -5,10 +5,14 @@ import {
 import {
   stpStrtDriveEngine
 } from "./serverRequest";
-import { arrWrapSvg } from "./animation";
-import { arrShipBool } from "./serverRequest";
+import {
+  arrWrapSvg
+} from "./animation";
+import {
+  arrShipBool
+} from "./serverRequest";
 
-export const arrShipAnim: Array<NodeJS.Timeout> = [];
+export const arrShipAnim: Array < NodeJS.Timeout > = [];
 
 export function setListStartShip() {
   const startBtn = document.getElementById(`${start_ID}`) as HTMLButtonElement;
@@ -34,11 +38,10 @@ export function setListStartShip() {
 
   startBtn.addEventListener('click', () => {
     console.log(id, ' id startStopShip');
-    // if(arrShipBool[id - 1] === undefined || arrShipBool[id - 1] === true) {
-    stpStrtDriveEngine(id, 'started', shipAnimating);
-    stpStrtDriveEngine(id, 'drive');
-    // shipAnimating;
-    // }
+    if (arrShipBool[id - 1] === undefined || arrShipBool[id - 1] === true) {
+      stpStrtDriveEngine(id, 'started', shipAnimating);
+      stpStrtDriveEngine(id, 'drive');
+    }
   });
 }
 
@@ -47,7 +50,7 @@ export function setListStopShip() {
   const stopBtn = document.getElementById(`${stop_ID}`) as HTMLButtonElement;
   const idBtn: string = stopBtn.id;
   const id = Number(idBtn.slice(5, idBtn.length));
-  
+
   stopBtn.addEventListener('click', () => {
     stpStrtDriveEngine(id, 'stopped');
     // clearInterval(arrShipAnim[id-1]);

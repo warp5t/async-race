@@ -1,6 +1,6 @@
 .winners-desk {
     display: none;
-    width: 34%;
+    width: max-content;
    
 }
 .show-winner {
@@ -9,12 +9,33 @@ flex-direction: column;
 }
 .winner-desk__wrap-head {
     display: flex;
-    background-color: #0105ff;
+    // background-color: #0105ff;
+
     color: aliceblue; 
-    padding: 10px 15px 10px 15px;
     justify-content:space-between;
 }
 
 .winner-desk__title-head {
-  
+    
+    padding: 10px 10px 10px 10px;
+}
+
+#winWins, #winTime:hover {
+    cursor: pointer;
+}
+.winner-desk__head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #a0b0c7 2px solid;
+}
+
+.craft-scale {
+    width: 60%;
+}
+.craft-image {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5.87vh;
 }
