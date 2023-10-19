@@ -42,6 +42,9 @@ function getNameColor(id:number) {
           const colorCraft = document.getElementById(`svgWin-${id}`) as HTMLOrSVGImageElement;
           colorCraft.classList.add('craft-scale')
           colorCraft.setAttribute('fill', `${shipData[key]}`);
+          if(colorCraft.className !== 'craft-scale') {
+            colorCraft.classList.add('craft-scale')
+          }
         }
       }
     })
