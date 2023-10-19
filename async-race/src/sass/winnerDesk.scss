@@ -34,8 +34,9 @@ flex-direction: column;
     width: 60%;
 }
 .craft-image {
+    position:relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 5.87vh;
+    height: 39px;
 }

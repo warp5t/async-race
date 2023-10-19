@@ -83,6 +83,7 @@ document.addEventListener('keydown', (event) => {
 	}
 	
   }, false);
+  
 raceBtn.addEventListener('click', () => {
 	let winnerIndicator = false;
 	// console.log(countPages, ' - countPages , raceMode');
