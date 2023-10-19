@@ -11,23 +11,28 @@ body.innerHTML = `
   <button class="container-mode__btn" id="toWinnerBtn">TO WINNERS</button>
 </div>
 <div class="winners-desk">
-  <div class="winner-desk__wrap-head">
-    <div class="winner-desk__head" id="winNumber">
-      <div class="winner-desk__title-head">Number</div>
-    </div>
-    <div class="winner-desk__head" id="winShip">
-      <div class="winner-desk__title-head">Ship</div>
-    </div>
-    <div class="winner-desk__head" id="winName">
-      <div class="winner-desk__title-head">Name</div>
-    </div>
-    <div class="winner-desk__head" id="winWins">
-      <div class="winner-desk__title-head">Wins</div>
-    </div>
-    <div class="winner-desk__head" id="winTime">
-      <div class="winner-desk__title-head">Best time (seconds)</div>
-    </div>
+<div class="winner-desk__wrap-head">
+  <div class="winner-desk__head">
+    <div class="winner-desk__title-head">Number</div>
+    <div class="winner-desk__container" id="winNumber"></div>
   </div>
+  <div class="winner-desk__head">
+    <div class="winner-desk__title-head">Ship</div>
+    <div class="winner-desk__container" id="winShip"></div>
+  </div>
+  <div class="winner-desk__head">
+    <div class="winner-desk__title-head">Name</div>
+    <div class="winner-desk__container" id="winName"></div>
+  </div>
+  <div class="winner-desk__head">
+    <div class="winner-desk__title-head">Wins</div>
+    <div class="winner-desk__container" id="winWins"></div>
+  </div>
+  <div class="winner-desk__head">
+    <div class="winner-desk__title-head">Best time (seconds)</div>
+    <div class="winner-desk__container" id="winTime"></div>
+  </div>
+</div>
 </div>
 <div class="race-arena">
 <div class="container-preparate">
