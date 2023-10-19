@@ -53,6 +53,22 @@ function getNameColor(id:number) {
 }
 
 function deleteNodes() {
+  const nameNodes = nameShip.childNodes;
+  while(nameNodes.length > 1) {
+      for (let i = 0; i < nameNodes.length; i++) {
+        if (nameNodes[i].textContent != 'Name') {
+          nameNodes[i].remove()
+      }
+    }
+  }
+  const imgNodes = imageShip.childNodes;
+  while(imgNodes.length > 1) {
+      for (let i = 0; i < imgNodes.length; i++) {
+        if (imgNodes[i].textContent != 'Ship') {
+          imgNodes[i].remove()
+      }
+    }
+  }
   const winNodes = winWins.childNodes;
   while(winNodes.length > 1) {
       for (let i = 0; i < winNodes.length; i++) {

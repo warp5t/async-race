@@ -10,7 +10,6 @@ winnersDesk.classList.toggle('show-winner')
 raceArena.classList.toggle('hide-arena')
 
 }
-// switchArenaWinn()
 
 toShipBtn.addEventListener('click', () => {
     toShipBtn.disabled = true;
