@@ -23,7 +23,7 @@ import {
 import { arrShipBool } from "./serverRequest";
 
 // import { winnersBtn } from "./winnersTable";
-
+import { fixShapeTable } from "./fixShapeWinners";
 
 
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
@@ -214,23 +214,18 @@ export function Technical_temporary_s() {
   techicalBtn_16.innerText = 'arrShipBool';
 
   techicalBtn_17.addEventListener('click', () => {
-    const winnerDeskNav = document.querySelector('.winner-desk__navigate') as HTMLDivElement;
-    const winnerBody = document.querySelector('.winner-desk__body') as HTMLDivElement;
-    // const titleHead = document.querySelector('.winner-desk__title-head') as HTMLDivElement;
-    // const titleNodes = titleHead.children;
-    const navNodes = winnerDeskNav.children;
-    const columsNodes = winnerBody.children;
-    const borderDifference = 2;
-    for (let i = 0; i < navNodes.length; i++) {
-        // const titleNode = titleNodes[i] as HTMLDivElement;
-        const navNode = navNodes[i] as HTMLDivElement;
-        const columnNode = columsNodes[i] as HTMLDivElement;
-        // if(i === titleNodes.length - 1) {
-        //     titleNode.style.width = (titleNode.offsetWidth + borderDifference) + 'px';
-        // }
-        columnNode.style.width = columnNode.offsetWidth + 15 + 'px';
-        navNode.style.width = (columnNode.offsetWidth - borderDifference) +'px';
-    }
+    fixShapeTable()
+    // const winnerDeskNav = document.querySelector('.winner-desk__navigate') as HTMLDivElement;
+    // const winnerBody = document.querySelector('.winner-desk__body') as HTMLDivElement;
+    // const navNodes = winnerDeskNav.children;
+    // const columsNodes = winnerBody.children;
+    // const borderDifference = 2;
+    // for (let i = 0; i < navNodes.length; i++) {
+    //     const navNode = navNodes[i] as HTMLDivElement;
+    //     const columnNode = columsNodes[i] as HTMLDivElement;
+    //     columnNode.style.width = columnNode.offsetWidth + 15 + 'px';
+    //     navNode.style.width = (columnNode.offsetWidth - borderDifference) +'px';
+    // }
 });
 
 

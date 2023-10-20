@@ -3,6 +3,7 @@ import {
   getShip
 } from "./serverRequest";
 import { toWinnerBtn } from "./switchArenaWinners";
+import { fixShapeTable } from "./fixShapeWinners";
 
 const imageShip = document.getElementById('winShip') as HTMLDivElement;
 const nameShip = document.getElementById('winName') as HTMLDivElement;
@@ -105,7 +106,7 @@ toWinnerBtn.addEventListener('click', () => {
   let countCraft = 0;
   deleteNodes()
   console.log('winnersBtn');
-  const winners = getWinners('ASC', 'wins')
+  getWinners('ASC', 'wins')
     .then((data: unknown) => {
       const shipData = data as ShipWinsTime[];
       console.log(shipData);
@@ -126,14 +127,14 @@ toWinnerBtn.addEventListener('click', () => {
         winNumber.append(elemNumber)
         winWins.append(elemWins)
         winTime.append(elemTime)
-      });
+      });     
+    })
+    .then(() => {
+      setTimeout(fixShapeTable, 1000)
     })
     .catch(error => {
       console.error(error);
     });
-
-  console.log(winners);
-
 })
 
 function runSwapImgColor(id:number, index:number) {
@@ -147,7 +148,7 @@ const imageNodes = imageShip.children;
         if(key === 'name') { 
           console.log(index, '- index');
           console.log(nameNodes[index].textContent);
-          nameNodes[index+1].textContent = String(shipData[key])
+          nameNodes[index].textContent = String(shipData[key])
         }
         if(key === 'color') {
           imageNodes[index].replaceChildren()
@@ -185,10 +186,6 @@ function runSwapWinsTime (direct:string, value: string) {
         runSwapImgColor(elem.id,index)
       }
       // console.log(elem.id,' - id', elem.wins, ' - wins', elem.time, ' - time');
-      // console.log(index, ' - index');
-      // console.log(winNodes[index].textContent);
-      // console.log('-------------------------------');
-       
     })    
   })
   .catch(error => {
