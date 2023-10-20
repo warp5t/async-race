@@ -31,7 +31,7 @@ function getNameColor(id:number) {
         if(key === 'name') {
             const elemName = document.createElement('div') as HTMLDivElement;
             elemName.innerText = String(shipData[key]);
-            elemName.classList.add('winner-desk__title-head')
+            elemName.classList.add('winner-desk__item')
             nameShip.append(elemName)           
         }
         if(key === 'color') {
@@ -120,9 +120,9 @@ toWinnerBtn.addEventListener('click', () => {
         elemNumber.innerText = String(countCraft);
         elemWins.innerText = String(elem.wins);
         elemTime.innerText = String(elem.time);
-        elemNumber.classList.add('winner-desk__title-head')
-        elemWins.classList.add('winner-desk__title-head')
-        elemTime.classList.add('winner-desk__title-head')
+        elemNumber.classList.add('winner-desk__item')
+        elemWins.classList.add('winner-desk__item')
+        elemTime.classList.add('winner-desk__item')
         winNumber.append(elemNumber)
         winWins.append(elemWins)
         winTime.append(elemTime)
