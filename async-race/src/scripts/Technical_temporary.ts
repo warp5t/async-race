@@ -23,7 +23,8 @@ import {
 import { arrShipBool } from "./serverRequest";
 
 // import { winnersBtn } from "./winnersTable";
-import { fixShapeTable } from "./fixShapeWinners";
+import { fixShapeWinner } from "./fixShapeWinners";
+import { fixHeightWinner } from "./fixShapeWinners";
 
 
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
@@ -214,18 +215,8 @@ export function Technical_temporary_s() {
   techicalBtn_16.innerText = 'arrShipBool';
 
   techicalBtn_17.addEventListener('click', () => {
-    fixShapeTable()
-    // const winnerDeskNav = document.querySelector('.winner-desk__navigate') as HTMLDivElement;
-    // const winnerBody = document.querySelector('.winner-desk__body') as HTMLDivElement;
-    // const navNodes = winnerDeskNav.children;
-    // const columsNodes = winnerBody.children;
-    // const borderDifference = 2;
-    // for (let i = 0; i < navNodes.length; i++) {
-    //     const navNode = navNodes[i] as HTMLDivElement;
-    //     const columnNode = columsNodes[i] as HTMLDivElement;
-    //     columnNode.style.width = columnNode.offsetWidth + 15 + 'px';
-    //     navNode.style.width = (columnNode.offsetWidth - borderDifference) +'px';
-    // }
+    fixShapeWinner()
+    fixHeightWinner()
 });
 
 
