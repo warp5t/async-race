@@ -18,7 +18,7 @@ body.innerHTML = `
   <div class="winner-desk__title-head">Wins</div>
   <div class="winner-desk__title-head">Best time (seconds)</div>
 </div>
-  <div class="winner-desk__wrap-head">
+  <div class="winner-desk__body">
     
       <div class="winner-desk__column" id="winNumber"></div>
     

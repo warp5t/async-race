@@ -25,6 +25,7 @@ import './scripts/animation'
 import './scripts/raceMode'
 import './scripts/winnersTable'
 import './scripts/switchWinner'
+import './scripts/fixShapeWinners'
 
 
 

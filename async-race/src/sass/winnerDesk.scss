@@ -1,19 +1,46 @@
 .winners-desk {
     display: none;
     width: max-content;
-   
+   border-top: 2px;
+    border-left: 1px;
+    border-right: 2px;
+    border-bottom: 0px;
+    border-color: #a0b0c7;
+    border-style: solid;
 }
 .winner-desk__navigate {
     display: flex;
+    
+}
+.winner-desk__title-head {
+    display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+    border-left: 1px;
+    border-right: 1px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-color: #a0b0c7;
+    border-style: solid;
+}
+.winner-desk__title-head:last-child { 
+    border-right: 0px;
 }
 .show-winner {
 display:flex;
 flex-direction: column;
 }
-.winner-desk__wrap-head {
+.winner-desk__body {
     display: flex;
     color: aliceblue; 
     justify-content:space-between;
+    border-left: 1px;
+    border-right: 0px;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-color: #a0b0c7;
+    border-style: solid;
 }
 
 .winner-desk__item {   
@@ -23,8 +50,16 @@ flex-direction: column;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: #a0b0c7 2px solid;
+    border-left: 0px;
+    border-right: 2px;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-color: #a0b0c7;
+    border-style: solid;
     padding: 10px 10px 10px 10px;
+}
+.winner-desk__column:last-child { 
+    border-right: 0px;
 }
 
 #winWins, #winTime:hover {
