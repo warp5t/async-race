@@ -10,43 +10,39 @@ body.innerHTML = `
   <button class="container-mode__btn" id="toShipBtn">TO SHIPS</button>
   <button class="container-mode__btn" id="toWinnerBtn">TO WINNERS</button>
 </div>
+<div class="winner-mode">
 <div class="winners-desk">
 <div class="winner-desk__navigate">
-  <div class="winner-desk__title-head">Number</div>
-  <div class="winner-desk__title-head">Ship</div>
-  <div class="winner-desk__title-head">Name</div>
-  <div class="winner-desk__title-head">Wins</div>
-  <div class="winner-desk__title-head">Best time (seconds)</div>
+<div class="winner-desk__title-head">Number</div>
+<div class="winner-desk__title-head">Ship</div>
+<div class="winner-desk__title-head">Name</div>
+<div class="winner-desk__title-head">Wins</div>
+<div class="winner-desk__title-head">Best time (seconds)</div>
 </div>
-  <div class="winner-desk__body">
-    
-      <div class="winner-desk__column" id="winNumber"></div>
-    
-    
-      <div class="winner-desk__column" id="winShip"></div>
-    
-    
-      <div class="winner-desk__column" id="winName"></div>
-    
-    
-      <div class="winner-desk__column" id="winWins"></div>
-    
-    
-      <div class="winner-desk__column" id="winTime"></div>
-    
-  </div>
-  </div>
+<div class="winner-desk__body">    
+<div class="winner-desk__column" id="winNumber"></div>  
+<div class="winner-desk__column" id="winShip"></div>   
+<div class="winner-desk__column" id="winName"></div>
+<div class="winner-desk__column" id="winWins"></div> 
+<div class="winner-desk__column" id="winTime"></div>    
+</div>
+</div>
+<div class="wrap-buttons">
+<button class="button-winner" id="prevWinners">PREVIOUS</button>
+<button class="button-winner" id="nextWinners">NEXT</button>
+</div>
+</div>
 <div class="race-arena">
 <div class="container-preparate">
-  <div class="wrap-create">
-    <input class="wrap-create__input" id="createName" type="text">
-    <input class="wrap-create__input" id="createColor" type="color">
-    <button class="container-preparate__btn" id="createBtn">Create</button>
-  </div>
-  <div class="wrap-update">
-    <input class="wrap-update__input" id="updateName" type="text">
-    <input class="wrap-update__input" id="updateColor" type="color">
-    <button class="container-preparate__btn" id="updateBtn">Update</button>
+<div class="wrap-create">
+<input class="wrap-create__input" id="createName" type="text">
+<input class="wrap-create__input" id="createColor" type="color">
+<button class="container-preparate__btn" id="createBtn">Create</button>
+</div>
+<div class="wrap-update">
+<input class="wrap-update__input" id="updateName" type="text">
+<input class="wrap-update__input" id="updateColor" type="color">
+<button class="container-preparate__btn" id="updateBtn">Update</button>
   </div>
 </div>
 <div class="container-third">

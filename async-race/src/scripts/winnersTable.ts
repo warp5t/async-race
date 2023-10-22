@@ -6,7 +6,8 @@ import {
   toWinnerBtn
 } from "./switchArenaWinners";
 import {
-  fixShapeWinner
+  fixShapeWinner,
+  fixHeightWinner
 } from "./fixShapeWinners";
 
 const imageShip = document.getElementById('winShip') as HTMLDivElement;
@@ -95,7 +96,8 @@ toWinnerBtn.addEventListener('click', () => {
       });
     })
     .then(() => {
-      setTimeout(fixShapeWinner, 1000)
+      setTimeout(fixShapeWinner, 500)
+      setTimeout(fixHeightWinner, 500)
     })
     .catch(error => {
       console.error(error);

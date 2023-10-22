@@ -1,5 +1,5 @@
 const raceArena = document.querySelector('.race-arena') as HTMLDivElement;
-const winnersDesk = document.querySelector('.winners-desk') as HTMLDivElement;
+const winnersDesk = document.querySelector('.winner-mode') as HTMLDivElement;
 const toShipBtn = document.getElementById('toShipBtn') as HTMLButtonElement;
 export const toWinnerBtn = document.getElementById('toWinnerBtn') as HTMLButtonElement;
 winnersDesk.classList.add('hide-block')
