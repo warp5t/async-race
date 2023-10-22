@@ -15,8 +15,6 @@ export function fixShapeWinner() {
 }
 
 export function fixHeightWinner() {
-	console.log(countPageWinners);
-	
   const countItem = 10;
 	const heightFix = 19;
 	const winnerDeskNav = document.querySelector('.winner-desk__navigate') as HTMLDivElement;
@@ -36,7 +34,7 @@ export function fixHeightWinner() {
 			console.log(actualRemain, ' - actualRemain', crudeAmmount, ' - crudeAmmount', difference, ' - difference', navNodes.length, ' - navNodes.length');		
 			winnerBody.style.height = ((heightItem * actualRemain) + heightFix - 5) + 'px';
 	} else {
-		winnerBody.style.height = ((heightItem * countItem) + heightFix) + 'px';		
+		winnerBody.style.height = ((heightItem * countItem) + heightFix - 7) + 'px';		
 	}
 
 }
