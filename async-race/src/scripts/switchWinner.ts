@@ -10,9 +10,14 @@ function rollItems() {
     const winnerDeskColumn = document.querySelectorAll('.winner-desk__column') as NodeListOf<HTMLDivElement>
     const heightItem = itemWinner.offsetHeight;
     const countItem = 10;
-	const heightFix = 19;
-    const result = ((heightItem * countItem * countPageWinners) + heightFix) + 'px';
-    console.log(result, ' - result');
+	const heightFix = 7;
+    let result = '';
+    if (countPageWinners === 0) {
+      result = (heightItem * countItem * countPageWinners) + 'px';
+        
+    } else {
+      result = ((heightItem * countItem * countPageWinners) + heightFix) + 'px';
+    }
     winnerDeskColumn.forEach((item) => {
         item.style.bottom = result;
     })
@@ -25,13 +30,10 @@ const ammountItems = itemWinner.children;
 const limitCountPage = Math.ceil(ammountItems.length / 10) - 1;
 console.log(limitCountPage, ' - limitCountPage');
 console.log(ammountItems.length , ' - ammountItems.length ');
-
-
-if (limitCountPage  > countPageWinners) {
-    
+if (limitCountPage  > countPageWinners) {  
     countPageWinners++
     fixHeightWinner()
-    if(countPageWinners > 0) {
+    if (countPageWinners > 0) {
         console.log('term 26');    
         rollItems()
     }
@@ -40,10 +42,9 @@ if (limitCountPage  > countPageWinners) {
 
 prevWinners.addEventListener('click', () => {
 console.log('prevWinners');
-if (countPageWinners > 0){
+if (countPageWinners > 0) {
     countPageWinners--
     fixHeightWinner()
     rollItems()
 }
-
 })
