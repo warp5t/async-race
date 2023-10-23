@@ -56,8 +56,8 @@ body.innerHTML = `
     <h3 class="container-title__page" id="page">Page #1</h3>
   </div>
   <div class="field-race">
-    <div class="subwrap-field-race">
-      <div class="container-track" id="track-0">
+    <div class="subwrap-field-race" id="containerTracks">
+      <div class="container-track" id="track-1">
         <div class="line-mode-1">
           <button class="line-mode-1__btn" id="SELECT-0">SELECT</button>
           <button class="line-mode-1__btn" id="REMOVE-1">REMOVE</button>

@@ -11,8 +11,7 @@ import {
 
 export const nextBtn = document.querySelector('.page-btn__next') as HTMLButtonElement;
 const prevBtn = document.querySelector('.page-btn__previous') as HTMLButtonElement;
-export let countPages = 0,
-  lastPage = false;
+export let countPages = 0, lastPage = false;
 
 
 function updateCountPages() {
