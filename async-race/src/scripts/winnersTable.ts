@@ -97,6 +97,7 @@ toWinnerBtn.addEventListener('click', () => {
     })
     .then(() => {
       setTimeout(fixShapeWinner, 500)
+      setTimeout(fixShapeWinner, 400)
       setTimeout(fixHeightWinner, 500)
     })
     .catch(error => {

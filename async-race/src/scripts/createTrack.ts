@@ -52,6 +52,8 @@ createName.style.color = '#A20202';
 
 function setName() {
   if(createName.value.length > 0) {
+    console.log(createName.value, ' - createName.value');
+    
     nameUFO = createName.value;
   }
   return nameUFO
@@ -99,6 +101,8 @@ function trackCreator(): HTMLDivElement {
 
   const contaierTrack = document.createElement('div') as HTMLDivElement;
   contaierTrack.classList.add('container-track');
+  console.log(nameUFO, ' - nameUFO');
+  
 contaierTrack.innerHTML = `
 <div class="line-mode-1">
 <button class="line-mode-1__btn" id="${select_ID}">SELECT</button>
@@ -142,8 +146,9 @@ export function createTrack_s() {
     remainUFO = countUFO % 7;
     ammountPages = Math.trunc(countUFO / 7);
     set_ID()
+    const name = setName();
     subwrapFieldRace.append(trackCreator())
-    createShip(setName(),setColor())
+    createShip(name,setColor())
     fixHeight()
     addIconStrtFnsh()
     updateCountUFO()
