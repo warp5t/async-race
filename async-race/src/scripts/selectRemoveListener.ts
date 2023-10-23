@@ -23,8 +23,8 @@ export function setListenerSelect() {
     console.log(pointUnit, typeof(pointUnit))
     trackNode.remove()
     console.log(Number(pointUnit)+1)
-    deleteShip(Number(pointUnit)+1);
-    deleteWinner(Number(pointUnit)+1);
+    deleteShip(Number(pointUnit));
+    deleteWinner(Number(pointUnit));
     const subwrapField = document.querySelector('.subwrap-field-race') as HTMLDivElement;
     ammountPages_listener = Math.trunc(subwrapField.children.length / 7);
     reassigneCountUFO()

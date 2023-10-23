@@ -330,6 +330,8 @@ export async function createWinner(id: number, wins: number, time: number) {
 }
 
 export async function deleteWinner(id: number) {
+  console.log(id, ' - id 333 serverRequests');
+  
   await fetch(`http://127.0.0.1:3000/winners/${id}`, {
       method: 'DELETE',
     })

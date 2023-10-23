@@ -60,7 +60,7 @@ body.innerHTML = `
       <div class="container-track" id="track-0">
         <div class="line-mode-1">
           <button class="line-mode-1__btn" id="SELECT-0">SELECT</button>
-          <button class="line-mode-1__btn" id="REMOVE-0">REMOVE</button>
+          <button class="line-mode-1__btn" id="REMOVE-1">REMOVE</button>
           <div class="line-mode-1__name" id="UFO-0">Space Sheep</div>
         </div>
         <div class="line-mode-2">
