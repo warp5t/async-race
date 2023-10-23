@@ -151,11 +151,15 @@ export function createTrack_s() {
     createShip(name,setColor())
     fixHeight()
     addIconStrtFnsh()
+    setListenerSelect()
+    setListStartShip()
+    setListStopShip()
+    wrapSvgCollect()
     updateCountUFO()
   })
   hatchBtn.addEventListener('click', () => {
     let ammountSpaceCraft = 100;
-    while(ammountSpaceCraft > 0) {
+    while (ammountSpaceCraft > 0) {
       countUFO++
       remainUFO = countUFO % 7;
       ammountPages = Math.trunc(countUFO / 7);
