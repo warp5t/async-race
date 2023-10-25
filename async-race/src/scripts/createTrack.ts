@@ -17,7 +17,7 @@ export let ammountPages = 0, remainUFO = 0;
 let  counter_ID = 2, nameUFO = ''; // removeCounter = 2;
 export let nameID = 'UFO-', svg_ID = 'svg-0',
 countUFO = 1, start_ID = 'START-1', stop_ID = 'STOP-1',
-remove_ID = 'REMOVE-1', select_ID = 'SELECT-0',track_ID = 'track-1';
+remove_ID = 'REMOVE-1', select_ID = 'SELECT-1',track_ID = 'track-1';
 
 (function(){
   remainUFO = countUFO % 7;

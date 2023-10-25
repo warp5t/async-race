@@ -13,7 +13,7 @@ updateBtn.addEventListener('click', () => {
   nameCraft.innerText = updateName.value;
   colorCraft.setAttribute('fill', `${updateColor.value}`);
   console.log(pointUnit, ' - pointUnit', typeof(pointUnit))
-  const idServerShip = Number(pointUnit) + 1;
+  const idServerShip = Number(pointUnit);
   updateShip(idServerShip, updateName.value, updateColor.value)
 })
 }

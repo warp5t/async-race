@@ -17,7 +17,7 @@ export function setListenerSelect() {
 
   const removeBtn = document.getElementById(`${remove_ID}`) as HTMLButtonElement;
   removeBtn.addEventListener('click', () => {
-    const idBtn = selectBtn.id;
+    const idBtn = removeBtn.id;
     pointUnit = idBtn.slice(7, idBtn.length);
     const trackNode = document.getElementById(`track-${pointUnit}`) as HTMLDivElement;
     console.log(pointUnit, typeof(pointUnit))
