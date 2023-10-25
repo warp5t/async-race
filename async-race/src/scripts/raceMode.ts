@@ -101,9 +101,6 @@ raceBtn.addEventListener('click', () => {
 		lastDiffer = -1;
 		initCount = ((countPages + 1) * ammountShip) - 1;
 	}
-	// console.log(initCount, ' - initCount');
-	// console.log((lengthContainer - initCount) + 6 + lastDiffer, ' - lengthContainer - initCount) + 6 + lastDiffer');
-	// console.log(lengthContainer - initCount, ' - collectionTracks.length - initCount;', lengthContainer - initCount, ' - collectionTracks.length - initCount;', lastDiffer, ' - lastDiffer');
 	let winnerIndicator = false;
 	for (let id = lengthContainer - initCount - 1 + remainDiff; id < (lengthContainer - initCount) + (6 - lastDiffer); id++) {
 		console.log(id, ' - id');
@@ -135,18 +132,14 @@ raceBtn.addEventListener('click', () => {
 							}
 						})()
 					}
-
-
 				}
 			}, 32);
 			arrShipAnim[id - 1] = anim;
 		};
-
 		arrShipAnim.push(arrShipAnim[id - 1]);
 		if (arrShipBool[id - 1] === undefined || arrShipBool[id - 1] === true) {
 			stpStrtDriveEngine(id, 'started', shipAnimating);
 			stpStrtDriveEngine(id, 'drive');
 		}
 	}
-
 })

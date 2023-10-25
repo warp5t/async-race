@@ -17,7 +17,7 @@ function initiate() {
     console.log(element.id, typeof (element.id))
     deleteShip(element.id)
   })
-  createShip('Space Sheep', '#7bbaf0')
+  createShip('Space Sheep', '#4d5d53')
 }
 
 

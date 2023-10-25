@@ -149,50 +149,6 @@ import { arrWrapSvg } from './animation'
 export const arrShipBool: Array<boolean> = [];
 export const arrTimeStart: Array<number> = [];
 
-// export async function stpStrtDriveEngine(
-//   id: number, status: string, fnAnim?: (velocity: number) => void) {
-//    arrTimeStart[id -1] = Date.now();
-//   await fetch(`http://127.0.0.1:3000/engine/?id=${id}&status=${status}`, {
-//     method: 'PATCH',
-//   })
-//   .then((response) => {
-//     if (status === 'started' && response.status === 200) {   
-//       arrShipBool[id - 1] = false;
-//       return response.json();
-//     } else if (status === 'drive' && response.status === 500) {
-//       clearInterval(arrShipAnim[id - 1])
-//       arrShipBool[id - 1] = false;
-//       return 
-//     } else if (status === 'drive' && response.status === 429) {
-//       arrShipBool[id - 1] = false;
-//       return 
-//     } else if (status === 'stopped' && response.status === 200) {
-//       clearInterval(arrShipAnim[id - 1])
-//       arrShipBool[id - 1] = true;
-     
-//       arrWrapSvg[id -1].style.left = '0px';
-//       return response.json;
-//     }
-//   })
-//   .then((data) => {
-//     if (status === 'started' && data) {
-//       // console.log(data.velocity, '- velocity', data.distance, '- distance', data.success, '- success',data);
-//       if (fnAnim) {
-//         const generalWrap = document.querySelector('.wrap') as HTMLDivElement;
-//         const widthTrack = generalWrap.offsetWidth;
-//         const vel = Math.trunc(((widthTrack * data.velocity) / data.distance) * 10);
-//         // console.log(vel, ' - vel');
-//         fnAnim(vel);
-//       }
-//     }
-//     if (status === 'drive' && data.success === true) {
-//       console.log('SUCCESS drive');
-//     } 
-//   })
-//   .catch((error) => {
-//     console.error('An error occurred:', error);
-//   });
-// }
 export async function stpStrtDriveEngine(
   id: number, status: string, fnAnim?: (velocity: number) => void
 ) {
@@ -248,23 +204,6 @@ export async function getWinners(order?: string, sort?: string) {
       });
   });
 }
-
-
-// export async function getWinner(id: number): Promise<string | void> {
-//   await fetch(`http://127.0.0.1:3000/winners/${id}`, {
-//       method: 'GET',
-//     })
-//     .then((response) => {
-//       if(response.status === 200) {
-//         return response.json()
-//       } else if (response.status === 404) {
-//         return 'no winner'
-//       }
-//     })
-//     // .then(data => console.log(
-//     //   data.wins, typeof (data)))
-//     .catch(error => console.error(error))
-// }
 
 export interface Winner {
   time: number,
