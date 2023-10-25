@@ -86,7 +86,7 @@ let initCount = 0;
 let lastDiffer = 0;
 let remainDiff = 0;  
 let lengthContainer = 0;
-
+let collectionTracks: NodeListOf<HTMLDivElement>;
 function correctInitIndex() {
 initCount = 0;
 lastDiffer = 0;
@@ -94,17 +94,17 @@ remainDiff = 0;
 lengthContainer = 0;
 	const ammountShip = 7;
 	const containerTracks = document.getElementById('containerTracks') as HTMLDivElement;
-	const collectionTracks = containerTracks.children;
+	collectionTracks = Array.from(containerTracks.children) as unknown as NodeListOf<HTMLDivElement>;
 	lengthContainer = collectionTracks.length;
 	
 	if (lastPage && countPages > 0) {
-		const preLast = countPages * ammountShip;
-		const preDiffer = collectionTracks.length - preLast;
-		lastDiffer = preDiffer - 1; 
+		const preLast = (countPages + 1) * ammountShip;
+		const preDiffer = preLast - collectionTracks.length;
+		lastDiffer = ammountShip - preDiffer; 
 		initCount = collectionTracks.length;
-		remainDiff = 2;
+		remainDiff = 1;
 	} else {
-		lastDiffer = -1;
+		lastDiffer = 6;
 		initCount = ((countPages + 1) * ammountShip) - 1;
 	}
 }
@@ -113,7 +113,8 @@ raceBtn.addEventListener('click', () => {
 	console.log('raceBtn');
 	correctInitIndex()
 	let winnerIndicator = false;
-	for (let id = lengthContainer - initCount - 1 + remainDiff; id < (lengthContainer - initCount) + (6 - lastDiffer); id++) {
+	for (let i = lengthContainer - initCount - 1 + remainDiff; i < (lengthContainer - initCount) + (lastDiffer); i++) {
+		const id = Number(collectionTracks[i].id.slice(6, collectionTracks[i].id.length))
 		console.log(id, ' - id');
 		const shipAnimating = function (velocity: number): void {
 			const earth = document.querySelector('.wrap-image-earth') as HTMLDivElement;
@@ -158,7 +159,8 @@ raceBtn.addEventListener('click', () => {
 resetRaveBtn.addEventListener('click', () => {
 	console.log('RESET');
 	correctInitIndex()
-	for (let id = lengthContainer - initCount - 1 + remainDiff; id < (lengthContainer - initCount) + (6 - lastDiffer); id++) { 
+	for (let i = lengthContainer - initCount - 1 + remainDiff; i < (lengthContainer - initCount) + (lastDiffer); i++) { 
+		const id = Number(collectionTracks[i].id.slice(6, collectionTracks[i].id.length))
 		stpStrtDriveEngine(id, 'stopped');
 	}
 })
