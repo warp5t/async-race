@@ -5,8 +5,6 @@ import {
 	svg_ID
 } from "./createTrack";
 
-// var element_parent = element_child.parentNode; 
-
 console.log(spliceName.length, spliceName)
 
 export const arrWrapSvg: Array < HTMLDivElement > = [];

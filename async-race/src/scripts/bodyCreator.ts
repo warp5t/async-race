@@ -61,7 +61,7 @@ body.innerHTML = `
         <div class="line-mode-1">
           <button class="line-mode-1__btn" id="SELECT-1">SELECT</button>
           <button class="line-mode-1__btn" id="REMOVE-1">REMOVE</button>
-          <div class="line-mode-1__name" id="UFO-0">Space Sheep</div>
+          <div class="line-mode-1__name" id="UFO-1">Space Sheep</div>
         </div>
         <div class="line-mode-2">
           <div class="wrap-status mode-status">
