@@ -23,6 +23,7 @@ import {
 
 
 const raceBtn = document.getElementById('RACE') as HTMLDivElement;
+const resetRaveBtn = document.getElementById('RESET') as HTMLButtonElement;
 export const arrTimeEnd: Array < number > = [];
 export const arrTimeDifference: Array < number > = [];
 
@@ -81,16 +82,17 @@ document.addEventListener('keydown', (event) => {
 	}
 	
   }, false);
-  
-raceBtn.addEventListener('click', () => {
-	console.log('raceBtn');
+let initCount = 0;
+let lastDiffer = 0;
+let remainDiff = 0;  
+let lengthContainer = 0;
+
+function correctInitIndex() {
 	const ammountShip = 7;
 	const containerTracks = document.getElementById('containerTracks') as HTMLDivElement;
 	const collectionTracks = containerTracks.children;
-	const lengthContainer = collectionTracks.length;
-	let initCount = 0;
-	let lastDiffer = 0;
-	let remainDiff = 0;
+	lengthContainer = collectionTracks.length;
+	
 	if (lastPage && countPages > 0) {
 		const preLast = countPages * ammountShip;
 		const preDiffer = collectionTracks.length - preLast;
@@ -101,6 +103,11 @@ raceBtn.addEventListener('click', () => {
 		lastDiffer = -1;
 		initCount = ((countPages + 1) * ammountShip) - 1;
 	}
+}
+
+raceBtn.addEventListener('click', () => {
+	console.log('raceBtn');
+	correctInitIndex()
 	let winnerIndicator = false;
 	for (let id = lengthContainer - initCount - 1 + remainDiff; id < (lengthContainer - initCount) + (6 - lastDiffer); id++) {
 		console.log(id, ' - id');
@@ -141,5 +148,13 @@ raceBtn.addEventListener('click', () => {
 			stpStrtDriveEngine(id, 'started', shipAnimating);
 			stpStrtDriveEngine(id, 'drive');
 		}
+	}
+})
+
+resetRaveBtn.addEventListener('click', () => {
+	console.log('RESET');
+	correctInitIndex()
+	for (let id = lengthContainer - initCount - 1 + remainDiff; id < (lengthContainer - initCount) + (6 - lastDiffer); id++) { 
+		stpStrtDriveEngine(id, 'stopped');
 	}
 })

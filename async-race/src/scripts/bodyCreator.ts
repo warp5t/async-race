@@ -47,7 +47,7 @@ body.innerHTML = `
 </div>
 <div class="container-third">
   <button class="container-third__btn" id="RACE">RACE</button>
-  <button class="container-third__btn" id="RESET">RESET</button>
+  <button class="container-third__btn" id="RESET">RESET RACE</button>
   <button class="container-third__btn" id="HATCH">HATCH UFO</button>
 </div>
 <div class="wrap-tracks">

@@ -68,10 +68,6 @@ export async function getShip(id: number) {
         reject(error);
       });
 }) 
-
-    // .then(data => data.json())
-    // .then(data => console.log(data, typeof (data)))
-    // .catch(error => console.error(error))
 }
 
 export async function createShip(name: string, color: string) {
@@ -237,7 +233,7 @@ export async function getWinner(id: number): Promise<Winner> {
     console.error(error);
   }
 
-  throw new Error('Failed to retrieve winner'); // Add a return statement for error case
+  throw new Error('Failed to retrieve winner'); 
 }
 
 
