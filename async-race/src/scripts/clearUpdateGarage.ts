@@ -1,7 +1,8 @@
 import {
   deleteShip,
   getShips,
-  createShip
+  createShip,
+  updateShip
 } from "./serverRequest";
 
 interface Ship {
@@ -40,3 +41,4 @@ async function initiatingData() {
 }
 
 initiatingData()
+updateShip(1, 'Space Sheep', '#4d5d53')
