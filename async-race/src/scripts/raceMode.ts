@@ -88,6 +88,10 @@ let remainDiff = 0;
 let lengthContainer = 0;
 
 function correctInitIndex() {
+initCount = 0;
+lastDiffer = 0;
+remainDiff = 0;  
+lengthContainer = 0;
 	const ammountShip = 7;
 	const containerTracks = document.getElementById('containerTracks') as HTMLDivElement;
 	const collectionTracks = containerTracks.children;
