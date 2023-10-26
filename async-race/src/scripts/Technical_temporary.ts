@@ -11,10 +11,6 @@ import {
   deleteWinner,
   updateWinner
 } from "./serverRequest";
-import {
-  loadStorage_fn,
-  saveStorage_fn
-} from "./localStorage";
 
 import {
   switchArenaWinn
@@ -182,13 +178,11 @@ export function Technical_temporary_s() {
 
   techicalBtn_12.addEventListener('click', () => {
     console.log('techicalBtn_12')
-    loadStorage_fn()
   })
   techicalBtn_12.innerText = 'load\nStorage';
 
   techicalBtn_13.addEventListener('click', () => {
     console.log('techicalBtn_13')
-    saveStorage_fn()
   })
   techicalBtn_13.innerText = 'save\nStorage';
 

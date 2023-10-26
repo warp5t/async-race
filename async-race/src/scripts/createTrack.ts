@@ -61,6 +61,8 @@ function setName() {
 }
 
 function setColor() {
+  // svg_ID = 'svg-' + counter_ID++;
+  console.log(svg_ID, ' - svg_ID');
   const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
   svgID_name.setAttribute('fill', `${createColor.value}`);
   return createColor.value
@@ -138,7 +140,6 @@ export function reassigneCountUFO() {
   ammountPages = ammountPages_listener;
 }
 
-export function createTrack_s() {
   const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
   createName.addEventListener("focus", disableCreateBtn);
   createName.addEventListener("input", disableCreateBtn);
@@ -147,9 +148,11 @@ export function createTrack_s() {
     remainUFO = countUFO % 7;
     ammountPages = Math.trunc(countUFO / 7);
     set_ID()
-    const name = setName();
     subwrapFieldRace.append(trackCreator())
-    createShip(name,setColor())
+    const color = setColor();
+    const name = setName();
+    createShip(name,color)
+    updateShip(countUFO, name, color)
     fixHeight()
     addIconStrtFnsh()
     setListenerSelect()
@@ -183,8 +186,7 @@ export function createTrack_s() {
       ammountSpaceCraft--
     }
   })
-}
-createTrack_s()
+
 // const observer_2 = new MutationObserver(reassigneCountUFO);
 
 // const config = {
