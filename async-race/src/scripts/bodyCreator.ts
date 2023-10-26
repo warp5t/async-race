@@ -65,8 +65,8 @@ body.innerHTML = `
         </div>
         <div class="line-mode-2">
           <div class="wrap-status mode-status">
-            <button class="mode-status__start" id="START-1"></button>
-            <button class="mode-status__finish" id="STOP-1"></button>
+            <button class="mode-status__st-fn" id="START-1"></button>
+            <button class="mode-status__st-fn" id="STOP-1"></button>
           </div>
           <div class="wrap-image-ship"></div>
           <div class="wrap-image-earth"></div>

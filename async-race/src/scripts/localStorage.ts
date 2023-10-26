@@ -8,7 +8,7 @@ import { fixHeight_s } from "./fixHeight";
 import { switchPages_s } from "./switchPages";
 import { updateTrack_s } from "./updateTrack";
 import { validationName_s } from "./validationName";
-import { Technical_temporary_s } from "./Technical_temporary";
+// import { Technical_temporary_s } from "./Technical_temporary";
 
 // interface BodyNodes {
 //   content: string;
@@ -55,7 +55,7 @@ export function loadStorage_fn() {
         switchPages_s()
         updateTrack_s()
         validationName_s()
-        Technical_temporary_s()
+        // Technical_temporary_s()
 }
 setTimeout(setFunction, 3000)
 //});
