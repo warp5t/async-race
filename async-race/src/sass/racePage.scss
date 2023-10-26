@@ -138,11 +138,12 @@
 }
 .wrap-image-ship {
   position: relative;
-  // left: 0px;
+  display: flex;
+  justify-content: center;
 }
 .wrap-image-earth {
   margin-left: auto;
-  padding-right: 10%;
+  margin-right: 10%;
 }
 .page-btn {
 }
@@ -152,4 +153,9 @@
   padding: 2px 5px 2px 5px;
   background-color: #b5b0b0;
   border-radius: 4px;
+}
+
+.landing-animation {
+  transition-duration: 14s;
+  width: 0px;
 }

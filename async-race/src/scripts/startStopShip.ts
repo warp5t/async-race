@@ -12,6 +12,7 @@ import {
   arrShipBool
 } from "./serverRequest";
 
+export const correctPixels = 80;
 export const arrShipAnim: Array < NodeJS.Timeout > = [];
 
 export function setListStartShip() {
@@ -21,14 +22,17 @@ export function setListStartShip() {
 
   const shipAnimating = function (velocity: number): void {
     const earth = document.querySelector('.wrap-image-earth') as HTMLDivElement;
+    arrWrapSvg[id - 1].style.width = earth.offsetWidth + 'px';
     const anim: NodeJS.Timeout = setInterval(() => {
       const leftPx = parseInt(window.getComputedStyle(arrWrapSvg[id - 1], null).left);
       arrWrapSvg[id - 1].style.left = (leftPx + velocity) + 'px';
       const coordEarth = Math.trunc(earth.getBoundingClientRect().x);
       const coordShip = parseInt(window.getComputedStyle(arrWrapSvg[id - 1], null).left);
-      if (coordEarth <= coordShip + 50) {
+      if (coordEarth <= coordShip + correctPixels) {
         clearInterval(anim);
         arrShipBool[id - 1] = true;
+        const ship = arrWrapSvg[id - 1].firstChild as HTMLOrSVGImageElement;
+        ship.classList.add('landing-animation');
       }
     }, 32);
     arrShipAnim[id - 1] = anim;
@@ -53,7 +57,10 @@ export function setListStopShip() {
 
   stopBtn.addEventListener('click', () => {
     stpStrtDriveEngine(id, 'stopped');
-    // clearInterval(arrShipAnim[id-1]);
+    console.log(id, ' - id');
+    
+    const ship = arrWrapSvg[id - 1].firstChild as HTMLOrSVGImageElement;
+        ship.classList.remove('landing-animation');
   });
 }
 
