@@ -23,6 +23,8 @@ import { fixShapeWinner } from "./fixShapeWinners";
 import { fixHeightWinner } from "./fixShapeWinners";
 import { permissWinners } from "./winnersTable";
 
+import { arrWrapSvg } from "./animation";
+
 
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
 const techicalBtn = document.createElement('button') as HTMLButtonElement;
@@ -188,9 +190,11 @@ export function Technical_temporary_s() {
 
   techicalBtn_14.addEventListener('click', () => {
     console.log('techicalBtn_14');
+    console.log(arrWrapSvg);
+    
   });
 
-  techicalBtn_14.innerText = 'reset\nCount\nWinners';
+  techicalBtn_14.innerText = 'arrWrapSvg';
 
   techicalBtn_15.addEventListener('click', () => {
     console.log('techicalBtn_15');
@@ -217,6 +221,6 @@ export function Technical_temporary_s() {
 });
 
 
-  techicalBtn_17.innerText = 'nodesChild';
+  techicalBtn_17.innerText = 'fixShapeWinner';
 }
 Technical_temporary_s()

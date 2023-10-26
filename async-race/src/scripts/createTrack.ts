@@ -148,9 +148,9 @@ export function reassigneCountUFO() {
     remainUFO = countUFO % 7;
     ammountPages = Math.trunc(countUFO / 7);
     set_ID()
+    const name = setName();
     subwrapFieldRace.append(trackCreator())
     const color = setColor();
-    const name = setName();
     createShip(name,color)
     updateShip(countUFO, name, color)
     fixHeight()
