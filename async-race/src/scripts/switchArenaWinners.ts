@@ -1,3 +1,5 @@
+// import { permissWinners } from "./winnersTable";
+
 const raceArena = document.querySelector('.race-arena') as HTMLDivElement;
 const winnersDesk = document.querySelector('.winner-mode') as HTMLDivElement;
 const toShipBtn = document.getElementById('toShipBtn') as HTMLButtonElement;
@@ -18,7 +20,9 @@ toShipBtn.addEventListener('click', () => {
 })
 
 toWinnerBtn.addEventListener('click', () => {
+    // if(permissWinners) {
     toShipBtn.disabled = false;
     toWinnerBtn.disabled = true; 
     switchArenaWinn()
+    // }
 })

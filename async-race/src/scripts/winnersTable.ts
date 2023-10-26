@@ -15,6 +15,7 @@ const nameShip = document.getElementById('winName') as HTMLDivElement;
 const winNumber = document.getElementById('winNumber') as HTMLDivElement;
 const winWins = document.getElementById('winWins') as HTMLDivElement;
 const winTime = document.getElementById('winTime') as HTMLDivElement;
+export let permissWinners = false;
 
 interface ShipWinsTime {
   id: number,
@@ -75,6 +76,11 @@ toWinnerBtn.addEventListener('click', () => {
   getWinners('ASC', 'wins')
     .then((data: unknown) => {
       const shipData = data as ShipWinsTime[];
+      if(shipData.length) {
+        permissWinners = true;
+      } else {
+        permissWinners = false;
+      }
       console.log(shipData);
       shipData.forEach((elem: ShipWinsTime) => {
         console.log(elem.id, elem.wins, elem.time);
@@ -184,5 +190,4 @@ winWins.addEventListener('click', () => {
     runSwapWinsTime(termWins, 'wins')
     termWins = 'ASC';
   }
-
 })

@@ -25,6 +25,7 @@ import { arrShipBool } from "./serverRequest";
 // import { winnersBtn } from "./winnersTable";
 import { fixShapeWinner } from "./fixShapeWinners";
 import { fixHeightWinner } from "./fixShapeWinners";
+import { permissWinners } from "./winnersTable";
 
 
 const wrap = document.querySelector('.wrap') as HTMLDivElement;
@@ -199,9 +200,11 @@ export function Technical_temporary_s() {
 
   techicalBtn_15.addEventListener('click', () => {
     console.log('techicalBtn_15');
+    console.log(permissWinners, ' - permissWinners');
+    
   });
 
-  techicalBtn_15.innerText = 'additCountShip';
+  techicalBtn_15.innerText = 'permissWinners';
 
   techicalBtn_16.addEventListener('click', () => {
     console.log('techicalBtn_16');

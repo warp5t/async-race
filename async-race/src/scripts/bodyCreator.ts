@@ -35,13 +35,13 @@ body.innerHTML = `
 <div class="race-arena">
 <div class="container-preparate">
 <div class="wrap-create">
-<input class="wrap-create__input" id="createName" type="text">
-<input class="wrap-create__input" id="createColor" type="color">
+<input class="wrap-create-upd__input" id="createName" type="text">
+<input class="wrap-create-upd__input" id="createColor" type="color">
 <button class="container-preparate__btn" id="createBtn">Create</button>
 </div>
 <div class="wrap-update">
-<input class="wrap-update__input" id="updateName" type="text">
-<input class="wrap-update__input" id="updateColor" type="color">
+<input class="wrap-create-upd__input" id="updateName" type="text">
+<input class="wrap-create-upd__input" id="updateColor" type="color">
 <button class="container-preparate__btn" id="updateBtn">Update</button>
   </div>
 </div>
