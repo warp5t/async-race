@@ -3,14 +3,12 @@ import {
   stop_ID
 } from "./createTrack";
 import {
+  arrShipBool,
   stpStrtDriveEngine
 } from "./serverRequest";
 import {
   arrWrapSvg
 } from "./animation";
-import {
-  arrShipBool
-} from "./serverRequest";
 
 export const correctPixels = 80;
 export const arrShipAnim: Array < NodeJS.Timeout > = [];
@@ -38,7 +36,7 @@ export function setListStartShip() {
     arrShipAnim[id - 1] = anim;
   };
 
-  arrShipAnim.push(arrShipAnim[id - 1]); // Add a placeholder for the ship animation
+  arrShipAnim.push(arrShipAnim[id - 1]); 
 
   startBtn.addEventListener('click', () => {
     console.log(id, ' id startStopShip');
@@ -48,7 +46,6 @@ export function setListStartShip() {
     }
   });
 }
-
 
 export function setListStopShip() {
   const stopBtn = document.getElementById(`${stop_ID}`) as HTMLButtonElement;
@@ -63,12 +60,3 @@ export function setListStopShip() {
         ship.classList.remove('landing-animation');
   });
 }
-
-// const arr = [];
-// const checkFunction = function() {
-//   setInterval(() => {
-//     console.log('check startStopShip')
-//   }, 1000)
-// } 
-// arr.push(checkFunction);
-// arr[0]();

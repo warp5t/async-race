@@ -30,7 +30,7 @@ interface ShipNameColor {
 }
 
 function getNameColor(id: number) {
-  const nameColor = getShip(id)
+  getShip(id)
     .then((data: unknown) => {
       const shipData = data as ShipNameColor[];
       console.log(shipData);
@@ -58,8 +58,6 @@ function getNameColor(id: number) {
     .catch(error => {
       console.error(error);
     });
-
-  console.log(nameColor);
 }
 
 function deleteNodes() {

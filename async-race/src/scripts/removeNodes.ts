@@ -1,16 +1,17 @@
-import {body} from './bodyCreator'
+import {
+  body
+} from './bodyCreator'
 
 function deleteNodeBody() { // for deleting excess nodes inside body tag
-  if(body.children.length > 1) {
+  if (body.children.length > 1) {
     for (let i = 0; i < body.children.length; i++) {
       const child = body.children[i];
-      if(child.className !== 'wrap') {
+      if (child.className !== 'wrap') {
         child.remove()
       }
     }
   }
 }
-
 
 const observer_1 = new MutationObserver(deleteNodeBody);
 

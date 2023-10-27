@@ -1,4 +1,3 @@
-// import { start_ID, stop_ID, remove_ID, select_ID } from "./createTrack";
 import { subwrapFieldRace } from "./createTrack";
 
 function checkMode() {

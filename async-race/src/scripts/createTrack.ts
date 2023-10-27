@@ -1,25 +1,42 @@
-import {fixHeight} from './fixHeight'
-import { setListenerSelect } from './selectRemoveListener'
+import {
+  fixHeight
+} from './fixHeight'
+import {
+  setListenerSelect
+} from './selectRemoveListener'
 import startImage from '../images/finish-flag.png'
 import finishImage from '../images/stop.png'
 
-import { setListStartShip, setListStopShip } from './startStopShip'
-import { wrapSvgCollect } from './animation'
-import { updateShip } from './serverRequest'
+import {
+  setListStartShip,
+  setListStopShip
+} from './startStopShip'
+import {
+  wrapSvgCollect
+} from './animation'
+import {
+  updateShip
+} from './serverRequest'
 
 export const createBtn = document.getElementById('createBtn') as HTMLButtonElement;
 export const createName = document.getElementById('createName') as HTMLInputElement;
 const createColor = document.getElementById('createColor') as HTMLInputElement;
 export const subwrapFieldRace = document.querySelector('.subwrap-field-race') as HTMLDivElement;
 
+export let ammountPages = 0,
+  remainUFO = 0;
+let counter_ID = 2,
+  nameUFO = '';
+export let nameID = 'UFO-1',
+  svg_ID = 'svg-1',
+  countUFO = 1,
+  start_ID = 'START-1',
+  stop_ID = 'STOP-1',
+  remove_ID = 'REMOVE-1',
+  select_ID = 'SELECT-1',
+  track_ID = 'track-1';
 
-export let ammountPages = 0, remainUFO = 0;
-let  counter_ID = 2, nameUFO = ''; // removeCounter = 2;
-export let nameID = 'UFO-1', svg_ID = 'svg-1',
-countUFO = 1, start_ID = 'START-1', stop_ID = 'STOP-1',
-remove_ID = 'REMOVE-1', select_ID = 'SELECT-1',track_ID = 'track-1';
-
-(function(){
+(function () {
   remainUFO = countUFO % 7;
 }())
 
@@ -35,34 +52,29 @@ export function updateCountUFO() {
 }
 
 function set_ID() {
-nameID = 'UFO-' + counter_ID;
-svg_ID = 'svg-' + counter_ID;
-select_ID = 'SELECT-' + counter_ID;
-remove_ID = 'REMOVE-' + counter_ID;
-start_ID = 'START-' + counter_ID;
-stop_ID = 'STOP-' + counter_ID;
-track_ID = 'track-' + (counter_ID);
-counter_ID++
-// removeCounter++
+  nameID = 'UFO-' + counter_ID;
+  svg_ID = 'svg-' + counter_ID;
+  select_ID = 'SELECT-' + counter_ID;
+  remove_ID = 'REMOVE-' + counter_ID;
+  start_ID = 'START-' + counter_ID;
+  stop_ID = 'STOP-' + counter_ID;
+  track_ID = 'track-' + (counter_ID);
+  counter_ID++
 }
 
-(function() {
-createName.placeholder = 'Enter a name for the craft';
-createName.style.color = '#f9f9f9';
+(function () {
+  createName.placeholder = 'Enter a name for the craft';
+  createName.style.color = '#f9f9f9';
 }())
 
 function setName() {
-  if(createName.value.length > 0) {
-    console.log(createName.value, ' - createName.value');
-    
+  if (createName.value.length > 0) {
     nameUFO = createName.value;
   }
   return nameUFO
 }
 
 function setColor() {
-  // svg_ID = 'svg-' + counter_ID++;
-  console.log(svg_ID, ' - svg_ID');
   const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
   svgID_name.setAttribute('fill', `${createColor.value}`);
   return createColor.value
@@ -70,14 +82,14 @@ function setColor() {
 
 function disableCreateBtn() {
   createName.style.color = "#f9f9f9";
-  if(createName.value.length === 0) {
+  if (createName.value.length === 0) {
     createBtn.disabled = true;
   } else {
     createBtn.disabled = false;
   }
 }
 
- function addIconStrtFnsh(){
+function addIconStrtFnsh() {
   const startBtn = document.getElementById(`${start_ID}`) as HTMLButtonElement;
   const finishBtn = document.getElementById(`${stop_ID}`) as HTMLButtonElement;
   const iconStart = document.createElement('img') as HTMLImageElement;
@@ -90,7 +102,6 @@ function disableCreateBtn() {
   iconFinish.src = finishImage;
 }
 addIconStrtFnsh()
-
 
 function randomColor() {
   let randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -105,8 +116,8 @@ function trackCreator(): HTMLDivElement {
   const contaierTrack = document.createElement('div') as HTMLDivElement;
   contaierTrack.classList.add('container-track');
   console.log(nameUFO, ' - nameUFO');
-  
-contaierTrack.innerHTML = `
+
+  contaierTrack.innerHTML = `
 <div class="line-mode-1">
 <button class="line-mode-1__btn" id="${select_ID}">SELECT</button>
 <button class="line-mode-1__btn" id="${remove_ID}">REMOVE</button>
@@ -123,36 +134,64 @@ contaierTrack.innerHTML = `
   contaierTrack.id = `track-${counter_ID - 1}`
   return contaierTrack
 }
-import { createShip } from './serverRequest';
+import {
+  createShip
+} from './serverRequest';
 
+import {
+  randomName
+} from './randomize'
+import {
+  spliceName
+} from './randomize'
 
-import {randomName} from './randomize'
-import {spliceName} from './randomize'
-
-import { ammountPages_listener } from './selectRemoveListener'
+import {
+  ammountPages_listener
+} from './selectRemoveListener'
 
 export function reassigneCountUFO() {
-  console.log('- - - - - reassigneCountUFO - - - - -')
-  console.log(ammountPages_listener, ' - ammountPages_listener')
   const subwrapField = document.querySelector('.subwrap-field-race') as HTMLDivElement;
   countUFO = subwrapField.children.length;
   remainUFO = subwrapField.children.length % 7;
   ammountPages = ammountPages_listener;
 }
 
-  const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
-  createName.addEventListener("focus", disableCreateBtn);
-  createName.addEventListener("input", disableCreateBtn);
-  createBtn.addEventListener('click', () => {
+const hatchBtn = document.getElementById('HATCH') as HTMLButtonElement;
+createName.addEventListener("focus", disableCreateBtn);
+createName.addEventListener("input", disableCreateBtn);
+createBtn.addEventListener('click', () => {
+  countUFO++
+  remainUFO = countUFO % 7;
+  ammountPages = Math.trunc(countUFO / 7);
+  set_ID()
+  const name = setName();
+  subwrapFieldRace.append(trackCreator())
+  const color = setColor();
+  createShip(name, color)
+  updateShip(countUFO, name, color)
+  fixHeight()
+  addIconStrtFnsh()
+  setListenerSelect()
+  setListStartShip()
+  setListStopShip()
+  wrapSvgCollect()
+  updateCountUFO()
+})
+hatchBtn.addEventListener('click', () => {
+  let ammountSpaceCraft = 100;
+  while (ammountSpaceCraft > 0) {
     countUFO++
     remainUFO = countUFO % 7;
     ammountPages = Math.trunc(countUFO / 7);
+    const colorShip = randomColor();
+    randomName()
     set_ID()
-    const name = setName();
+    nameUFO = spliceName[spliceName.length - 1];
+    createShip(nameUFO, colorShip)
+    updateShip(countUFO, nameUFO, colorShip)
     subwrapFieldRace.append(trackCreator())
-    const color = setColor();
-    createShip(name,color)
-    updateShip(countUFO, name, color)
+    const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
+    svgID_name.setAttribute('fill', colorShip);
     fixHeight()
     addIconStrtFnsh()
     setListenerSelect()
@@ -160,39 +199,6 @@ export function reassigneCountUFO() {
     setListStopShip()
     wrapSvgCollect()
     updateCountUFO()
-  })
-  hatchBtn.addEventListener('click', () => {
-    let ammountSpaceCraft = 100;
-    while (ammountSpaceCraft > 0) {
-      countUFO++
-      remainUFO = countUFO % 7;
-      ammountPages = Math.trunc(countUFO / 7);
-      const colorShip = randomColor();
-      randomName()
-      set_ID()
-      nameUFO = spliceName[spliceName.length -1];
-      createShip(nameUFO, colorShip)
-      updateShip(countUFO,nameUFO,colorShip)
-      subwrapFieldRace.append(trackCreator())
-      const svgID_name = document.getElementById(`${svg_ID}`) as HTMLDivElement;
-      svgID_name.setAttribute('fill', colorShip);
-      fixHeight()
-      addIconStrtFnsh()
-      setListenerSelect()
-      setListStartShip()
-      setListStopShip()
-      wrapSvgCollect()
-      updateCountUFO()
-      ammountSpaceCraft--
-    }
-  })
-
-// const observer_2 = new MutationObserver(reassigneCountUFO);
-
-// const config = {
-//   attributes: true,
-//   childList: true,
-//   subtree: true
-// };
-
-// observer_2.observe(subwrapFieldRace, config)
+    ammountSpaceCraft--
+  }
+})

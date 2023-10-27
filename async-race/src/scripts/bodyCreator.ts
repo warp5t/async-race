@@ -1,8 +1,6 @@
 import space from '../images/space.jpg'
 
-
 export const body = document.getElementById('body') as HTMLBodyElement;
-
 
 body.innerHTML = `
 <div class="wrap">

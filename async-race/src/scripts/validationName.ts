@@ -19,15 +19,10 @@ export function nameValidation(name: string) {
   }
 }
 
-export function validationName_s() {
+createName.addEventListener("focus", () => {
+  nameValidation(createName.value)
+})
 
-  createName.addEventListener("focus", () => {
-    nameValidation(createName.value)
-  })
-
-  createName.addEventListener("input", () => {
-    nameValidation(createName.value)
-  })
-
-}
-validationName_s()
+createName.addEventListener("input", () => {
+  nameValidation(createName.value)
+})

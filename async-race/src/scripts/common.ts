@@ -1,10 +1,12 @@
 const inputTxtCreate = document.getElementById('createName') as HTMLInputElement;
 
 const btnCreate = document.getElementById('createBtn') as HTMLButtonElement;
- import {body} from './bodyCreator'
+import {
+  body
+} from './bodyCreator'
 
- 
- import earth from '../images/earth.png'
+
+import earth from '../images/earth.png'
 
 const wrapImageEarth = document.querySelector('.wrap-image-earth') as HTMLDivElement;
 const earthImage = document.createElement('img');
@@ -28,4 +30,3 @@ export function common_s() {
 }
 
 common_s()
-

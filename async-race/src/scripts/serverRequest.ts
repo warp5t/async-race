@@ -53,8 +53,8 @@ export async function shipSpliceNameManipulate(term ? : string, id ? : number) {
 
 export async function getShip(id: number) {
   return new Promise((resolve, reject) => {
-     fetch('http://127.0.0.1:3000/garage/' + id)
-    .then(response => response.json())
+    fetch('http://127.0.0.1:3000/garage/' + id)
+      .then(response => response.json())
       .then((data) => {
         const ship = {
           id: data.id,
@@ -67,7 +67,7 @@ export async function getShip(id: number) {
         console.error(error);
         reject(error);
       });
-}) 
+  })
 }
 
 export async function createShip(name: string, color: string) {
@@ -138,15 +138,19 @@ export async function deleteShip(id: number) {
     })
 }
 
-import { arrShipAnim } from './startStopShip';
-import { arrWrapSvg } from './animation'
+import {
+  arrShipAnim
+} from './startStopShip';
+import {
+  arrWrapSvg
+} from './animation'
 
 
-export const arrShipBool: Array<boolean> = [];
-export const arrTimeStart: Array<number> = [];
+export const arrShipBool: Array < boolean > = [];
+export const arrTimeStart: Array < number > = [];
 
 export async function stpStrtDriveEngine(
-  id: number, status: string, fnAnim?: (velocity: number) => void
+  id: number, status: string, fnAnim ? : (velocity: number) => void
 ) {
   arrTimeStart[id - 1] = Date.now();
 
@@ -169,26 +173,25 @@ export async function stpStrtDriveEngine(
       arrShipBool[id - 1] = false;
     } else if (status === 'drive' && response.status === 429) {
       arrShipBool[id - 1] = false;
-    } else if (status === 'stopped' && response.status === 200) { 
+    } else if (status === 'stopped' && response.status === 200) {
       console.log(id - 1);
       clearInterval(arrShipAnim[id - 1]);
       arrShipBool[id - 1] = true;
       arrWrapSvg[id - 1].style.left = '0px';
       const data = await response.json();
       console.log(data);
-      
+
     }
   } catch (error) {
     console.error('An error occurred:', error);
   }
 }
 
-
-export async function getWinners(order?: string, sort?: string) {
+export async function getWinners(order ? : string, sort ? : string) {
   return new Promise((resolve, reject) => {
     fetch(`http://127.0.0.1:3000/winners?_order=${order}&_sort=${sort}`, {
-      method: 'GET',
-    })
+        method: 'GET',
+      })
       .then(response => response.json())
       .then(data => {
         // console.log(data, typeof data);
@@ -203,15 +206,15 @@ export async function getWinners(order?: string, sort?: string) {
 
 export interface Winner {
   time: number,
-  wins: number,
-  persistance: boolean
+    wins: number,
+    persistance: boolean
 }
 
-export async function getWinner(id: number): Promise<Winner> {
+export async function getWinner(id: number): Promise < Winner > {
   const winner: Winner = {
-  time: 0,
-  wins: 0,
-  persistance: false,
+    time: 0,
+    wins: 0,
+    persistance: false,
   }
   try {
     const response = await fetch(`http://127.0.0.1:3000/winners/${id}`, {
@@ -233,7 +236,7 @@ export async function getWinner(id: number): Promise<Winner> {
     console.error(error);
   }
 
-  throw new Error('Failed to retrieve winner'); 
+  throw new Error('Failed to retrieve winner');
 }
 
 
@@ -265,8 +268,7 @@ export async function createWinner(id: number, wins: number, time: number) {
 }
 
 export async function deleteWinner(id: number) {
-  console.log(id, ' - id 333 serverRequests');
-  
+
   await fetch(`http://127.0.0.1:3000/winners/${id}`, {
       method: 'DELETE',
     })

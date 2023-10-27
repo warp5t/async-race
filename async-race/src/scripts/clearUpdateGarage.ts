@@ -15,12 +15,10 @@ let carList: Ship[];
 function initiate() {
   getShips()
   carList.forEach((element) => {
-    console.log(element.id, typeof (element.id))
     deleteShip(element.id)
   })
   createShip('Space Sheep', '#4d5d53')
 }
-
 
 async function initiatingData() {
   let counter = 0;
@@ -28,7 +26,6 @@ async function initiatingData() {
     .then(data => data.json())
     .then(data => {
       carList = data
-      console.log('server is running ------------------- clearUpdateGarage')
       carList.forEach((element) => {
         if (element.name === 'Tesla' || element.name === 'BMW' || element.name === 'Mersedes' || element.name === 'Ford') {
           counter++

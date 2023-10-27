@@ -1,11 +1,6 @@
 import {
-	spliceName
-} from "./randomize";
-import {
 	svg_ID
 } from "./createTrack";
-
-console.log(spliceName.length, spliceName)
 
 export const arrWrapSvg: Array < HTMLDivElement > = [];
 

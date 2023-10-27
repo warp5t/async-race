@@ -14,9 +14,10 @@
 
 .winner-desk__navigate {
 	display: flex;
-	color:aliceblue;
-	
+	color: aliceblue;
+
 }
+
 .winner-desk__body {
 	display: flex;
 	color: aliceblue;
@@ -58,7 +59,7 @@
 }
 
 .winner-desk__column {
-	position:relative;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -100,6 +101,4 @@
 	display: flex;
 }
 
-.button-winner {
-
-}
+.button-winner {}
