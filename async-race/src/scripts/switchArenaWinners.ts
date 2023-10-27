@@ -1,3 +1,6 @@
+import { getWinners } from "./serverRequest";
+import { ShipWinsTime } from "./winnersTable";
+
 const raceArena = document.querySelector('.race-arena') as HTMLDivElement;
 const winnersDesk = document.querySelector('.winner-mode') as HTMLDivElement;
 const toShipBtn = document.getElementById('toShipBtn') as HTMLButtonElement;
@@ -16,7 +19,13 @@ toShipBtn.addEventListener('click', () => {
 })
 
 toWinnerBtn.addEventListener('click', () => {
-    toShipBtn.disabled = false;
-    toWinnerBtn.disabled = true; 
-    switchArenaWinn()
+    getWinners('ASC', 'wins')
+    .then((data: unknown) => {
+      const shipData = data as ShipWinsTime[];
+      if(shipData.length) {
+        toShipBtn.disabled = false;
+        toWinnerBtn.disabled = true; 
+        switchArenaWinn()
+      }
+    })
 })

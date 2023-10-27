@@ -18,10 +18,8 @@ import {
 
 import { arrShipBool } from "./serverRequest";
 
-// import { winnersBtn } from "./winnersTable";
 import { fixShapeWinner } from "./fixShapeWinners";
 import { fixHeightWinner } from "./fixShapeWinners";
-import { permissWinners } from "./winnersTable";
 
 import { arrWrapSvg } from "./animation";
 
@@ -198,8 +196,6 @@ export function Technical_temporary_s() {
 
   techicalBtn_15.addEventListener('click', () => {
     console.log('techicalBtn_15');
-    console.log(permissWinners, ' - permissWinners');
-    
   });
 
   techicalBtn_15.innerText = 'permissWinners';
